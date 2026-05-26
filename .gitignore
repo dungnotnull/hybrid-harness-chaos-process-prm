@@ -1,0 +1,31 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Artifacts (runtime outputs — not committed)
+.commandcode/artifacts/
+.commandcode/progress.json
+
+# Secrets
+*.pem
+*.key
+.env
+.env.*
+
+# Logs
+*.log
