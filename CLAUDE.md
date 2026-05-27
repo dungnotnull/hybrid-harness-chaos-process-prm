@@ -11,7 +11,7 @@
 
 ## What This Project Does
 
-This repository defines a **32-skill Agile workflow** covering the complete SDLC from ideation to production operations:
+This repository defines a **33-skill Agile workflow** covering the complete SDLC from ideation to production operations:
 
 | Domain | Purpose |
 |---|---|
@@ -23,6 +23,7 @@ This repository defines a **32-skill Agile workflow** covering the complete SDLC
 | **Verification** | Continuous verification, observability, alerting, recommendations |
 | **Governance** | OPA policies, cloud cost, release management, disaster recovery |
 | **Learning** | Resilience scoring, postmortem RCA, compliance & audit |
+| **Research** | Deep multi-source research, evidence synthesis, brainstorming debrief |
 
 ---
 
@@ -39,7 +40,9 @@ hybrid-harness-chaos-process-prm/
 │   ├── backlog.md                     ← Prioritized backlog
 │   └── artifacts/                     ← All outputs produced by skills
 │
-└── skills/                            ← 32 skills in Agile workflow order
+└── skills/                            ← 33 skills in Agile workflow order
+
+    AI-AGENT-MAPPING.md               ← Harness AI agent mapping + autonomy model
 
     FOUNDATION (00-03)
     ├── s00-orchestrator/              ← Master workflow coordinator
@@ -90,6 +93,9 @@ hybrid-harness-chaos-process-prm/
 
     STRATEGIC INNOVATION (31 — callable anytime)
     └── s31-strategic-creator/         ← Brainstorming, proposals, trade-off analysis
+
+    RESEARCH (32 — callable anytime)
+    └── s32-deep-research/             ← Multi-source research, evidence synthesis, debrief
 ```
 
 ---
@@ -105,6 +111,9 @@ PHASE 1: PLANNING & REQUIREMENTS
 
 ── s31 (STRATEGIC CREATOR — callable at ANY phase) ──
      ↑↓ can be invoked before, during, or after any phase
+
+── s32 (DEEP RESEARCH — callable at ANY phase) ──
+     ↑↓ evidence-grounded research + brainstorming debrief
 
 PHASE 2: CI/CD SCAFFOLDING
   s04 → s05 → s06 → s07 → s08 → s09 → s10
@@ -204,11 +213,17 @@ Step 2:  READ the orchestrator (s00) for context
 Step 3:  READ the target skill's SKILL.md completely
 Step 4:  VERIFY input contract — all prerequisites satisfied
 Step 5:  LOAD taste data from .commandcode/taste/
-Step 6:  EXECUTE following the skill's prescribed workflow
-Step 7:  CAPTURE outputs into workflow context
-Step 8:  UPDATE progress.json via s03
-Step 9:  NOTIFY orchestrator of completion
-Step 10: DISPATCH to next skill in sequence
+Step 6:  CHECK AI Agent Integration section in SKILL.md
+         - Identify applicable Harness AI agent (if any)
+         - Determine current autonomy level
+         - Prepare human gates for approval
+Step 7:  EXECUTE following the skill's prescribed workflow
+         - Call Harness AI agent when available (orchestration layer)
+         - Fall back to manual/template execution when unavailable
+Step 8:  CAPTURE outputs into workflow context
+Step 9:  UPDATE progress.json via s03
+Step 10: NOTIFY orchestrator of completion
+Step 11: DISPATCH to next skill in sequence
 ```
 
 ---
@@ -304,7 +319,65 @@ FF_<TYPE>_<DOMAIN>_<FEATURE>
 | 29 | Disaster Recovery | Govern | DR, failover, RTO, RPO, backup |
 | 30 | Compliance & Audit | Learn | compliance, audit, SOC2, HIPAA, GDPR |
 | 31 | Strategic Creator | Any | think bigger, brainstorm, propose, innovate, upgrade |
+| 32 | Deep Research | Any | research this, find papers, literature review, evidence for |
 
 ---
 
-*This CLAUDE.md is the canonical entry point. Always read it first, then consult s00-orchestrator for phase context.*
+## AI Agent Architecture
+
+This project integrates with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem. See `skills/AI-AGENT-MAPPING.md` for the complete mapping.
+
+### SRE Autonomy Levels (Google SRE Framework)
+
+Every skill declares its autonomy level in its SKILL.md:
+
+| Level | Name | Agent Role |
+|---|---|---|
+| **L0** | Manual | None |
+| **L1** | Hypothesis | AI suggests, human decides |
+| **L2** | Assisted | AI drafts, human approves |
+| **L3** | Delegated | AI executes, human reviews |
+| **L4** | Full Autonomy | AI acts independently |
+
+**Current project state**: L1-L2. **Target**: L2-L3. **Safety-critical skills (s16, s29)** remain L1-L2 permanently.
+
+### Harness AI Agent Coverage
+
+| Agent | Model | Skills Covered |
+|---|---|---|
+| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s04-s10, s24, s28 |
+| Reliability Agent | Harness AI | s14-s20, s26 |
+| SRE Agent | Harness AI | s21-s23, s27, s29 |
+| Test Agent | Harness AI | s12-s13 |
+| FinOps Agent | Harness AI | s25 |
+| AppSec/STO Agent | Harness AI | s11, s30 |
+| Knowledge Graph | Harness AI | s03 |
+
+### MCP Integration (Chaos Skills)
+
+Chaos engineering skills (s14-s20) can interact with chaos platforms through MCP servers:
+
+| Platform | MCP Server | Integration Skills |
+|---|---|---|
+| LitmusChaos | litmuschaos-mcp | s14-s20 |
+| Gremlin | gremlin-mcp | s14-s17 |
+| Steadybit | steadybit-mcp | s14-s20 |
+| AWS FIS | aws-fis-bedrock | s18 |
+| Harness Chaos | Native AI | s14-s20 |
+
+### Orchestration Pattern
+
+Each skill follows: **Load Context -> AI Agent Call -> Validate -> Human Gate -> Execute -> Update Progress**. When Harness AI is unavailable, skills fall back to static templates and manual execution.
+
+### Research Backing
+
+Key evidence supporting this architecture (from 34-source deep research, 2026-05-27):
+- **ChaosEater (ASE 2025)**: LLM agents automate full chaos lifecycle on Kubernetes
+- **Google SRE AI Operator**: L2/L3 autonomous mitigation across thousands of incidents
+- **LLM RCA accuracy**: 60-74% few-shot vs 82% human -- co-pilot, not autonomous
+- **Application-level chaos**: Only 3.0% of real experiments (this project's s19 addresses this gap)
+- **No published research** exists on integrated CI/CD + chaos + governance AI workflows
+
+---
+
+*This CLAUDE.md is the canonical entry point. Always read it first, then consult s00-orchestrator for phase context. For AI agent mapping details, consult `skills/AI-AGENT-MAPPING.md`.*

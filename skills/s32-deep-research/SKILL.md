@@ -388,6 +388,36 @@ invoked_when:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | Research + interactive debrief, human evaluates all findings |
+| Target | L1 | Permanently L1 by design (research advisory, not autonomous) |
+
+### Harness AI Agent
+
+**Agent**: None (research by design)
+**Capabilities**:
+- Multi-source parallel research (academic/docs/industry)
+- Evidence synthesis and classification
+- Interactive brainstorming debrief
+- Research report generation
+
+### Human Gates
+
+- ALL research findings presented for user evaluation
+- ALL recommendations require user selection
+- ALL dispatch decisions require user approval
+
+### Notes
+
+This skill is permanently L1 by design. Research quality requires human judgment for source evaluation and solution selection.
+
+---
+
 ## Success Criteria
 
 - [ ] s32 can be invoked from any phase or directly by user

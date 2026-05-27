@@ -349,6 +349,33 @@ Enforce via OPA admission webhook or Harness policy on pipeline output.
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI recommends cost savings and creates dashboards |
+| Target | L3 | AI auto-optimizes cloud spend within budget bounds |
+
+### Harness AI Agent
+
+**Agent**: Harness AI FinOps Agent
+**Capabilities**:
+- Smart cloud cost savings recommendations
+- Dashboard creation via natural language
+- Commitment analysis
+- K8s cluster spend optimization
+- Cost asset policy auto-generation
+
+### Human Gates
+
+- Budget approval
+- Cost anomaly investigation
+- Commitment purchase approval
+
+---
+
 ## Success Criteria
 - [ ] All cloud accounts connected with billing data ingesting
 - [ ] Budget alerts configured at 50/80/90/100% thresholds

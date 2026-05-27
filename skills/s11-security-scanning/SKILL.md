@@ -458,6 +458,36 @@ def aggregate_security_results(artifact_dir: str) -> dict:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI detects vulnerabilities and suggests remediation |
+| Target | L3 | AI auto-remediates LOW/MEDIUM, human reviews HIGH/CRITICAL |
+
+### Harness AI Agent
+
+**Agent**: Harness AI AppSec/STO Agent
+**Capabilities**:
+- CVE/CWE detection with explanation
+- Auto-remediation (50-75% fix time reduction)
+- PR-based vulnerability fixes
+- SAST/DAST scan step generation via natural language
+
+### Human Gates
+
+- Security gate override for HIGH/CRITICAL
+- Security exception approval
+- Production scan configuration changes
+
+### Fallback
+
+When Harness AI unavailable: Use static scanning tools (Semgrep, Trivy, Snyk) with manual result review
+
+---
+
 ## Success Criteria
 - [ ] SAST passes with zero HIGH/CRITICAL findings
 - [ ] Container scan passes with zero CRITICAL CVEs (with fixes available)

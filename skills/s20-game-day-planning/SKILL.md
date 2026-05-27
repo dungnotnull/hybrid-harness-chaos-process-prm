@@ -270,6 +270,36 @@ composite_scenarios:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates game day scenarios and timelines |
+| Target | L2 | AI orchestrates game day execution with human coordination |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Game day scenario generation from experiment library
+- Timeline and team coordination
+- Real-time experiment orchestration
+
+### Human Gates
+
+- Game day approval
+- Production go/no-go
+- Experiment pause/abort decisions
+
+### MCP
+
+- LitmusChaos MCP
+- Gremlin MCP
+
+---
+
 ## Success Criteria
 - [ ] Game day runbook completed and shared T-7 days before event
 - [ ] All roles assigned and briefed

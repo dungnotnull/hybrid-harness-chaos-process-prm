@@ -320,6 +320,36 @@ git push origin main
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates ArgoCD Application YAML and GitOps operations |
+| Target | L3 | AI manages GitOps sync and drift detection |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- GitOps operations for 13 resource types
+- ArgoCD Application YAML generation
+- Sync policy configuration
+- Drift detection and alerting
+
+### Human Gates
+
+- Production sync policies
+- Drift resolution in production
+- GitOps repo access changes
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] GitOps agent running with `Connected` status in Harness
 - [ ] Application syncing automatically within 3 minutes of Git push

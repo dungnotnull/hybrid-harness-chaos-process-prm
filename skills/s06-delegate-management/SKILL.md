@@ -306,6 +306,35 @@ kubectl get deployment harness-delegate -n harness-delegate \
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI suggests delegate configuration and RBAC templates |
+| Target | L2 | AI drafts delegate install scripts and RBAC policies |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Delegate install guidance
+- RBAC policy template generation
+- Namespace scoping recommendations
+
+### Human Gates
+
+- Delegate installation execution
+- RBAC changes
+- Namespace access grants
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] Delegate pods: `Running`, replicas ≥ 2
 - [ ] Harness UI shows delegate as "Connected"

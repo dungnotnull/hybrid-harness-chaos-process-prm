@@ -303,6 +303,35 @@ fi
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI identifies baseline metrics and creates probes |
+| Target | L2 | AI generates steady-state definitions from telemetry |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Baseline metric identification from observability data
+- Probe creation (HTTP, CMD, Prometheus)
+- Anomaly detection configuration
+
+### Human Gates
+
+- Steady-state definition approval
+- Baseline acceptance
+
+### MCP
+
+- LitmusChaos MCP (resilience probes)
+- Prometheus
+
+---
+
 ## Success Criteria
 - [ ] Steady state YAML documented for every chaos target service
 - [ ] Prometheus recorded rules deployed and collecting for 7+ days

@@ -491,6 +491,34 @@ protocol:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | Advisory only -- AI proposes, never implements |
+| Target | L1 | Permanently L1 by design (strategic advisory, not autonomous) |
+
+### Harness AI Agent
+
+**Agent**: None (advisory by design)
+**Capabilities**:
+- Innovation dimension exploration
+- Proposal generation with trade-offs
+- Challenge assumption analysis
+- Strategic question bank
+
+### Human Gates
+
+- ALL proposals require explicit user acceptance before dispatch to implementation skills
+
+### Notes
+
+This skill is permanently L1 by design. Strategic creativity requires human judgment and cannot be safely automated.
+
+---
+
 ## Success Criteria
 - [ ] At least 3 innovation dimensions explored (not just "make it faster")
 - [ ] Every proposal includes all 5 sections (What, Why, Trade-offs, Scope, Timeline)

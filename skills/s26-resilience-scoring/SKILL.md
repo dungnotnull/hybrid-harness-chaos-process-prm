@@ -328,6 +328,31 @@ def production_readiness_gate(score_card: dict) -> dict:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI calculates resilience scores from experiment data |
+| Target | L3 | AI continuously scores resilience and identifies trends |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Quantitative resilience analysis from experiment results
+- Scoring calculation and trend analysis
+- Weakness identification and experiment recommendations
+
+### Human Gates
+
+- Score methodology approval
+- Scoring threshold changes
+- Resilience target setting
+
+---
+
 ## Success Criteria
 - [ ] Resilience score calculated for every service tested
 - [ ] All 5 component scores computed with evidence

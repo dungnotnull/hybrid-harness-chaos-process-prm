@@ -351,6 +351,35 @@ Generate and share this document with the service team:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates service/env/connector definitions from prompts |
+| Target | L3 | AI creates and configures services, human validates |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Service creation via conversational prompts
+- Environment definition generation
+- Connector configuration
+- Service dependency mapping
+
+### Human Gates
+
+- Service definition approval
+- Production environment creation
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] All connectors tested and showing "Success"
 - [ ] Service definition saved and visible in Harness UI

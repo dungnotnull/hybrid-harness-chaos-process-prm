@@ -222,6 +222,32 @@ slo:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates CV config and SLO validation |
+| Target | L2 | AI configures verification and monitors SLOs |
+
+### Harness AI Agent
+
+**Agent**: Harness AI SRE Agent
+**Capabilities**:
+- CV config generation
+- SLO validation setup
+- Monitored service configuration
+- Verification metric analysis
+
+### Human Gates
+
+- Verification threshold approval
+- SLO target acceptance
+- Production monitoring changes
+
+---
+
 ## Success Criteria
 - [ ] Monitored service connected to observability backend
 - [ ] At minimum 2 metrics: error rate + p99 latency

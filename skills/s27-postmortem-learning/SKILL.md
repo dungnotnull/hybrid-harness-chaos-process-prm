@@ -267,6 +267,37 @@ loop_closure:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates postmortems and extracts action items |
+| Target | L3 | AI auto-generates postmortems with RCA, human reviews |
+
+### Harness AI Agent
+
+**Agent**: Harness AI SRE Agent
+**Capabilities**:
+- Auto-postmortem generation from incident data
+- RCA analysis (60-74% accuracy with LLMs)
+- Action item extraction and tracking
+- Incident timeline reconstruction
+
+### Human Gates
+
+- Postmortem approval
+- Action item assignment
+- Root cause acceptance
+- Feedback loop trigger to s01
+
+### Notes
+
+Based on Szandala (ICCS 2025), LLMs achieve 60-74% RCA accuracy with few-shot prompting vs 82% for human SREs. Design as co-pilot, not replacement.
+
+---
+
 ## Success Criteria
 - [ ] Postmortem completed within 48 hours of experiment/game day
 - [ ] Blameless timeline documented for all experiments

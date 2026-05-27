@@ -294,6 +294,33 @@ deployment_calendar:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates release notes and go/no-go checklists |
+| Target | L2 | AI drafts release plans, human approves production deployments |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Release notes generation
+- Deployment calendar management
+- Go/no-go checklist generation
+- Rollback plan documentation
+
+### Human Gates
+
+- Production go/no-go decision
+- Release approval
+- Rollback execution
+- Deployment calendar changes
+
+---
+
 ## Success Criteria
 - [ ] Release plan documented with deployment schedule
 - [ ] Go/No-Go checklist completed — all automated gates green

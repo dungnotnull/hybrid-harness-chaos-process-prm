@@ -412,6 +412,34 @@ uses_approved_template(stage) {
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI identifies reusable patterns from existing pipelines |
+| Target | L2 | AI generates and maintains template library |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Pattern recognition across pipelines
+- Template extraction and generalization
+- Template version management
+
+### Human Gates
+
+- Template publication
+- Template deprecation decisions
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] All 4 core templates published at org-level
 - [ ] All new pipelines referencing templates (not inline stages)

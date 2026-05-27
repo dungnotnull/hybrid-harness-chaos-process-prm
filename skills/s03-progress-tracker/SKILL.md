@@ -392,6 +392,35 @@ Track velocity for estimation:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | Auto-updates state based on skill execution events |
+| Target | L3 | Knowledge graph with auto-linking of artifacts and blocker detection |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Knowledge Graph
+**Capabilities**:
+- Auto-state updates from skill execution
+- Artifact cross-referencing and linking
+- Blocker detection and notification
+- Workflow context enrichment
+
+### Human Gates
+
+- Progress overrides when state is incorrect
+- Manual phase resets
+
+### MCP Integration
+
+None required
+
+---
+
 ## Success Criteria
 - [ ] Progress.json created and initialized with all 26 phases
 - [ ] State transitions follow the strict state machine (no invalid transitions)

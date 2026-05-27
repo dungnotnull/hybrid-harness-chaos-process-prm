@@ -318,6 +318,34 @@ bootstrap_message:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | Auto-learns preferences from user interactions |
+| Target | L2 | Preference learning (human confirmation always required) |
+
+### Harness AI Agent
+
+**Agent**: None (internal skill, no external AI agent)
+**Capabilities**:
+- Preference pattern recognition from user interactions
+- Taste profile updates
+- Preference contradiction detection
+
+### Human Gates
+
+- New preference confirmation
+- Preference override when contradicted
+
+### MCP Integration
+
+None required
+
+---
+
 ## Success Criteria
 - [ ] Taste file exists and is read at start of every session
 - [ ] Tastes injected into every skill context

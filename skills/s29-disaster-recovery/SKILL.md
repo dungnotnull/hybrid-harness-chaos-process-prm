@@ -416,6 +416,33 @@ echo "✅ Backup validation complete"
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates DR plans and failover runbooks |
+| Target | L2 | AI creates DR plans and validates RTO/RPO, human executes failover |
+
+### Harness AI Agent
+
+**Agent**: Harness AI SRE Agent
+**Capabilities**:
+- DR plan generation
+- Failover runbook creation
+- RTO/RPO validation
+- Backup verification scheduling
+
+### Human Gates
+
+- Failover execution
+- Backup restoration
+- DR drill approval
+- RTO/RPO target changes
+
+---
+
 ## Success Criteria
 - [ ] Business impact analysis completed for all services
 - [ ] RTO/RPO targets defined and documented per service tier

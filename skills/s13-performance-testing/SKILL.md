@@ -453,6 +453,35 @@ Based on stress test results:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI optimizes test selection and compares baselines |
+| Target | L2 | AI generates k6 scripts and detects anomalies |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Test Agent
+**Capabilities**:
+- Test selection optimization
+- Baseline comparison and anomaly detection
+- Performance regression identification
+
+### Human Gates
+
+- Performance threshold approval
+- Capacity planning decisions
+- Load test parameter configuration
+
+### Fallback
+
+Manual k6 script creation following k6 documentation
+
+---
+
 ## Success Criteria
 - [ ] Baseline performance report generated (Level 2)
 - [ ] Stress test identifies breaking point (Level 4)

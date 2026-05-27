@@ -307,6 +307,35 @@ Account-level secrets    → Available across all orgs and projects
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI suggests secret reference patterns and vault integration |
+| Target | L2 | AI generates secret configs and vault integration templates |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Secret reference creation via conversational prompts
+- Vault/AWS SM/GCP SM integration templates
+- Secret rotation policy suggestions
+
+### Human Gates
+
+- Secret creation
+- Access grant approval
+- Vault policy changes
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] Zero hardcoded secrets in any pipeline YAML
 - [ ] All secrets referencing external SM (not Harness built-in) for production

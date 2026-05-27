@@ -350,6 +350,32 @@ scrape_configs:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates dashboards and alert rules |
+| Target | L2 | AI creates observability stack and correlates chaos metrics |
+
+### Harness AI Agent
+
+**Agent**: Harness AI SRE Agent
+**Capabilities**:
+- Dashboard generation
+- Chaos metric correlation
+- Alert rule creation and optimization
+- Investigation dashboard (dynamic AI-powered single-pane-of-glass)
+
+### Human Gates
+
+- Dashboard publication
+- Metric baseline acceptance
+- Alert rule activation
+
+---
+
 ## Success Criteria
 - [ ] Chaos Grafana dashboard created with all 7 panels
 - [ ] Prometheus scraping LitmusChaos metrics every 15s

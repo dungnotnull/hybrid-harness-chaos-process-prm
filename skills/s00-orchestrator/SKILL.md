@@ -369,6 +369,36 @@ User prompt received
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | Phase detection, skill dispatch recommendations |
+| Target | L3 | Auto-dispatch with human checkpoint at phase transitions |
+
+### Harness AI Agent
+
+**Agent**: Workflow Orchestration (Harness AI Intelligent Workflow Orchestration layer)
+**Capabilities**:
+- Phase detection from context
+- Skill dispatch optimization
+- Context handoff generation
+- Blocker identification
+
+### Human Gates
+
+- Phase transitions require human confirmation
+- Skip-phase requests require explicit approval
+- Workflow restart requires human trigger
+
+### MCP Integration
+
+None required
+
+---
+
 ## Success Criteria
 - [ ] CLAUDE.md loaded and understood
 - [ ] Progress file detected or created

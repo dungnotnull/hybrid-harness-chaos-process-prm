@@ -305,6 +305,36 @@ fi
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates alert routing and remediation recommendations |
+| Target | L3 | AI auto-remediates common issues, escalates complex ones |
+
+### Harness AI Agent
+
+**Agent**: Harness AI SRE Agent
+**Capabilities**:
+- Alert routing and enrichment (within 2-minute time budget)
+- Remediation recommendation engine
+- Incident hypothesis generation (10% MTTM reduction proven)
+- Alert deduplication and correlation
+
+### Human Gates
+
+- Alert rule activation in production
+- Remediation action approval
+- Escalation policy changes
+
+### Notes
+
+Based on Google SRE research, AI alert enrichment achieves 44% reduction in MTTM. LLMs achieve 60-74% RCA accuracy with few-shot prompting (Szandala, ICCS 2025).
+
+---
+
 ## Success Criteria
 - [ ] Alert routing configured for all 4 severity levels
 - [ ] PagerDuty integration tested (test alert acknowledged)

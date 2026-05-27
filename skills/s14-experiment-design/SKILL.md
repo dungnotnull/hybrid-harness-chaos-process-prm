@@ -269,6 +269,36 @@ Before marking an experiment ready to run:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI recommends experiments based on system analysis |
+| Target | L2 | AI generates experiment manifests from natural language |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Chaos experiment recommendations from app events and infra changes
+- Natural language experiment generation (e.g., "Generate a pod-delete experiment for staging")
+- Service discovery and auto-creation of tailored experiments
+
+### Human Gates
+
+- Hypothesis approval
+- Experiment activation
+- Target service selection
+
+### MCP
+
+- LitmusChaos MCP (experiment CRUD, infra ops, resilience probes)
+- Gremlin MCP (experiment analysis, remediation)
+
+---
+
 ## Success Criteria
 - [ ] Experiment YAML passes `kubectl apply --dry-run=client`
 - [ ] ChaosEngine references correct `appLabel` for target service

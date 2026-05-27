@@ -299,6 +299,31 @@ Grant this role only to: Engineering Directors, SRE Leads, Release Managers.
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates OPA Rego policies from natural language |
+| Target | L3 | AI maintains policy library and detects violations |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- OPA Rego policy generation from natural language
+- Compliance gate design
+- Policy violation detection and notification
+
+### Human Gates
+
+- Policy activation
+- Compliance exception approval
+- Governance framework changes
+
+---
+
 ## Success Criteria
 - [ ] Core policy set active with `OnRun` enforcement
 - [ ] All 7 essential policies above implemented and tested

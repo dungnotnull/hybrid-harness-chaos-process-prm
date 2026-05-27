@@ -496,6 +496,33 @@ The following artifacts are available in `.commandcode/artifacts/compliance/audi
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI collects evidence and maps controls |
+| Target | L2 | AI auto-generates audit trails, human signs off |
+
+### Harness AI Agent
+
+**Agent**: Harness AI AppSec/STO Agent
+**Capabilities**:
+- Evidence collection from all skill artifacts
+- Control mapping (SOC2/HIPAA/GDPR/PCI)
+- Audit trail generation
+- Compliance gap identification
+
+### Human Gates
+
+- Audit sign-off
+- Exception approval
+- Control remediation decisions
+- Compliance framework changes
+
+---
+
 ## Success Criteria
 - [ ] Control mapping completed for all applicable frameworks
 - [ ] Audit trail generated for each quarter

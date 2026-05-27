@@ -318,6 +318,35 @@ This is a **re-entrant** skill. Return here when:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI suggests requirements and PRD structure |
+| Target | L2 | AI drafts PRD and ADRs, human reviews and approves |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent (Claude Opus 4.5)
+**Capabilities**:
+- PRD analysis and generation
+- Requirement extraction from user descriptions
+- Architecture Decision Record drafting
+
+### Human Gates
+
+- PRD approval
+- ADR decisions
+- Backlog prioritization
+
+### MCP Integration
+
+None required
+
+---
+
 ## Success Criteria
 - [ ] All Opening Questions answered (or explicit "unknown" documented)
 - [ ] At least 3 Gap Detection questions asked and resolved

@@ -263,6 +263,35 @@ Maintain this in your chaos runbook wiki:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI assists in hypothesis writing and validation |
+| Target | L2 | AI generates validation scripts and steady-state probes |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Steady-state validation script generation
+- Probe configuration for HTTP/CMD/Prometheus
+- Hypothesis structure suggestions
+
+### Human Gates
+
+- Hypothesis acceptance/rejection
+- Validation criteria approval
+
+### MCP
+
+- LitmusChaos MCP (resilience probes)
+- Prometheus
+
+---
+
 ## Success Criteria
 - [ ] Every chaos experiment has a written hypothesis before running
 - [ ] Hypothesis includes specific measurable thresholds (not vague "stays healthy")

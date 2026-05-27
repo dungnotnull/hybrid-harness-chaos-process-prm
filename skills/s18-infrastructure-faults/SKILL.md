@@ -379,6 +379,35 @@ kubectl exec -it <POD_NAME> -- rm -rf /var/lib/data/diskfill/*
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates infrastructure fault manifests |
+| Target | L2 | AI targets infra components and generates fault YAML |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Infrastructure fault manifest generation
+- Node/disk/CPU/cloud fault targeting
+- Fault parameter optimization
+
+### Human Gates
+
+- Production infrastructure fault approval
+- Cloud provider fault approval (EC2 stop, etc.)
+
+### MCP
+
+- LitmusChaos MCP
+- AWS FIS + Amazon Bedrock (natural language experiment generation)
+
+---
+
 ## Success Criteria
 - [ ] All fault manifests validate with `kubectl apply --dry-run=client`
 - [ ] Pre-flight safety checks script created and tested

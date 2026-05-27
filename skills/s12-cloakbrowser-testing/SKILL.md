@@ -393,6 +393,35 @@ export default defineConfig({
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI creates tests 10x faster with self-healing |
+| Target | L3 | AI generates and maintains test suite, human approves baselines |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Test Agent
+**Capabilities**:
+- Natural language test creation (10x faster)
+- Self-healing tests (70% maintenance reduction)
+- Intent-based testing adapting to UI changes
+
+### Human Gates
+
+- Test baseline approval
+- Test coverage acceptance
+- Visual regression threshold
+
+### Fallback
+
+Manual test creation following Playwright and CloakBrowser documentation
+
+---
+
 ## Success Criteria
 - [ ] Smoke tests pass (100% pass rate for /health, homepage, critical APIs)
 - [ ] E2E flow tests pass (all critical user journeys)

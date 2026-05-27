@@ -378,6 +378,36 @@ await runPodDeleteExperiment();
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates FF config and SDK code |
+| Target | L3 | AI manages FF lifecycle, human approves production changes |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent
+**Capabilities**:
+- Feature flag configuration generation
+- SDK code generation
+- Kill switch setup
+- Rollout strategy optimization
+
+### Human Gates
+
+- Production FF toggle activation
+- Kill switch activation
+- Rollout percentage changes above threshold
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] All flags follow naming convention `FF_<TYPE>_<DOMAIN>_<FEATURE>`
 - [ ] Every flag has a `cleanup-by` tag with quarter/date

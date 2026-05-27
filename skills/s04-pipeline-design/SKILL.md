@@ -358,6 +358,36 @@ trigger:
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI generates pipeline YAML from natural language |
+| Target | L3 | AI generates and validates pipelines, human reviews |
+
+### Harness AI Agent
+
+**Agent**: Harness AI DevOps Agent (Claude Opus 4.5 via Vertex AI)
+**Capabilities**:
+- Natural language pipeline YAML generation across all modules
+- Error Analyzer (change impact + dependency checks + historical patterns + RCA + fix recommendations)
+- Pipeline Summarizer
+- Multi-stage pipeline creation validated with 50-stage pipelines
+
+### Human Gates
+
+- Pipeline approval before first deployment
+- Security-sensitive stage configuration
+- Production environment pipeline changes
+
+### Fallback
+
+When Harness AI is unavailable: Use static pipeline templates from s09 Template Library and manual YAML construction following Harness schema documentation.
+
+---
+
 ## Success Criteria
 - [ ] Pipeline YAML passes `harness pipeline lint` (or manual schema review)
 - [ ] No hardcoded credentials

@@ -447,6 +447,39 @@ async function monitorCircuitBreaker(service: string, dependency: string) {
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates application fault manifests |
+| Target | L2 | AI generates pod/container/network/DNS fault YAML |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Application fault manifest generation (pod-delete, container-kill, network, DNS)
+- Fault Flags for application-level chaos
+- Target selection based on service topology
+
+### Human Gates
+
+- Production application fault approval
+- Fault Flag activation
+
+### MCP
+
+- LitmusChaos MCP
+- Harness Fault Flags
+
+### Industry Context
+
+Application-level chaos is critically underrepresented in practice (3.0% of experiments per GitHub study of 971 repos) -- this skill addresses a documented industry gap.
+
+---
+
 ## Success Criteria
 - [ ] All 7 fault types designed and validated in dev
 - [ ] Pod Delete passes with 100% health probe success

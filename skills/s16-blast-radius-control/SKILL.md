@@ -310,6 +310,35 @@ deny["Chaos experiment missing required probe — abort conditions undefined"] {
 
 ---
 
+## AI Agent Integration
+
+### Autonomy Level
+
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI scopes blast radius and designs abort mechanisms |
+| Target | L2 | AI generates ChaosGuard policies and abort configurations |
+
+### Harness AI Agent
+
+**Agent**: Harness AI Reliability Agent
+**Capabilities**:
+- Blast radius scoping based on service topology
+- ChaosGuard policy generation
+- Abort mechanism design and configuration
+
+### Human Gates
+
+- Blast radius approval
+- Abort threshold review
+- Production chaos scope approval
+
+### MCP
+
+- Harness ChaosGuard
+
+---
+
 ## Success Criteria
 - [ ] Label selector verified against real pod list before experiment
 - [ ] Namespace-scoped RBAC (not ClusterAdmin) for chaos service account
