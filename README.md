@@ -1,22 +1,26 @@
-# hybrid-harness-chaos-process-prm (v.0.1)
+# hybrid-harness-chaos-process-prm (v.0.2)
 
-**A 32-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, and compliance, purpose-built for the era of AI-assisted development.**
+**A 33-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, and deep research, purpose-built for the era of AI-assisted development.**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-32-00b894.svg)](skills/)
+[![Skills](https://img.shields.io/badge/skills-33-00b894.svg)](skills/)
 [![AI Compatible](https://img.shields.io/badge/AI-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20GPT--4-8A2BE2.svg)]()
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg)](tools/)
 
 ---
 
 ## What Is This?
 
-This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 32-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, and compliance auditing.
+This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 33-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, and deep research.
 
 **It's not a framework you install. It's a workflow you clone and point your AI agent at.**
 
 ```text
 Ideation → BA Analysis → CI/CD → Security Gate → Testing → Chaos → Game Day
 → Verification → Alerting → Governance → Release → DR → Compliance → Strategic Review
+→ Deep Research (anytime)
+
+Also: AI Agent Integration across all 33 skills with Harness AI agents + MCP
 ```
 
 ---
@@ -46,6 +50,7 @@ skills/sNN-<name>/
     ├── Output Contract    # What this skill produces for downstream skills
     ├── Prerequisites      # External dependencies (tools, accounts, access)
     ├── Workflow           # Step-by-step execution instructions
+    ├── AI Agent Integration  # Autonomy level, Harness AI agent, human gates, MCP
     ├── Templates/Examples # Runnable YAML, scripts, configuration
     └── Success Criteria   # Measurable completion checklist
 ```
@@ -126,10 +131,15 @@ skills/sNN-<name>/
 | 29 | Disaster Recovery | RTO/RPO matrix, multi-region active-active architecture, failover runbook, backup validation |
 | 30 | Compliance & Audit | SOC2/HIPAA/GDPR/PCI-DSS/ISO 27001 control mapping, auto-generated audit trail, signed evidence bundles |
 
-### Strategic Innovation (31 — callable at any phase)
+### Strategic Innovation (31 -- callable at any phase)
 | # | Skill | Purpose |
 |---|-------|---------|
-| 31 | Strategic Creator | Advisory-only brainstorming with structured trade-off analysis — proposes, warns, never implements without user acceptance |
+| 31 | Strategic Creator | Advisory-only brainstorming with structured trade-off analysis -- proposes, warns, never implements without user acceptance |
+
+### Research (32 -- callable at any phase)
+| # | Skill | Purpose |
+|---|-------|---------|
+| 32 | Deep Research | Multi-source research engine (Google Scholar, arXiv, official docs, industry blogs) with evidence synthesis and interactive brainstorming debrief -- every claim grounded in external evidence |
 
 ---
 
@@ -256,7 +266,7 @@ echo "============================================"
 echo " ✅ Skill library installed successfully!"
 echo "============================================"
 echo ""
-echo "   Skills: $TARGET_DIR/skills/ (32 skills)"
+echo "   Skills: $TARGET_DIR/skills/ (33 skills)"
 echo "   Taste:  .commandcode/taste/taste.md"
 echo "   Config: CLAUDE.md"
 echo ""
@@ -338,7 +348,7 @@ Write-Host "============================================" -ForegroundColor Cyan
 Write-Host " ✅ Skill library installed successfully!" -ForegroundColor Green
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "   Skills: $TargetDir\skills\ (32 skills)" -ForegroundColor White
+Write-Host "   Skills: $TargetDir\skills\ (33 skills)" -ForegroundColor White
 Write-Host "   Taste:  .commandcode\taste\taste.md" -ForegroundColor White
 Write-Host "   Config: CLAUDE.md" -ForegroundColor White
 Write-Host ""
@@ -436,9 +446,82 @@ Principles: Safety first. Hypothesis-driven. Security as a gate. Infrastructure 
 
 ---
 
+## Tools
+
+The project includes CLI tools for validation, documentation, scaffolding, and chaos engineering integration:
+
+```bash
+# Validate all 33 SKILL.md files for structural correctness
+python tools/validate_skills.py
+
+# Generate SKILLS-CATALOG.md from skill metadata
+python tools/generate_docs.py
+
+# Create a new skill with correct structure
+python tools/scaffold_skill.py --number 33 --name "my-skill" --description "desc"
+
+# Chaos MCP server (requires pip install -e ".[mcp]")
+chaos-mcp-server
+```
+
+| Tool | Purpose |
+|---|---|
+| `validate_skills.py` | Checks frontmatter, required sections, autonomy levels, cross-references, duplicates |
+| `generate_docs.py` | Auto-generates SKILLS-CATALOG.md with agent coverage matrix, MCP matrix, autonomy distribution |
+| `scaffold_skill.py` | Creates new skills with AI integration metadata auto-filled from phase/agent defaults |
+| `chaos_mcp_server` | MCP server with 9 tools for LitmusChaos and Harness Chaos operations (dry-run by default) |
+
+Install all tools: `pip install -e .` (requires Python 3.11+)
+
+---
+
+## AI Agent Architecture
+
+All 33 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
+
+### SRE Autonomy Levels (Google SRE Framework)
+
+Every skill declares its autonomy level in its SKILL.md:
+
+| Level | Name | Agent Role |
+|---|---|---|
+| **L0** | Manual | None |
+| **L1** | Hypothesis | AI suggests, human decides |
+| **L2** | Assisted | AI drafts, human approves |
+| **L3** | Delegated | AI executes, human reviews |
+| **L4** | Full Autonomy | AI acts independently |
+
+Current project state: **L1-L2**. Target: **L2-L3**. Safety-critical skills (s16, s29) remain L1-L2 permanently.
+
+### Harness AI Agent Coverage
+
+| Agent | Model | Skills Covered |
+|---|---|---|
+| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s04-s10, s24, s28 |
+| Reliability Agent | Harness AI | s14-s20, s26 |
+| SRE Agent | Harness AI | s21-s23, s27, s29 |
+| Test Agent | Harness AI | s12-s13 |
+| FinOps Agent | Harness AI | s25 |
+| AppSec/STO Agent | Harness AI | s11, s30 |
+| Knowledge Graph | Harness AI | s03 |
+
+### MCP Integration (Chaos Skills)
+
+Chaos engineering skills (s14-s20) can interact with chaos platforms through MCP servers:
+
+| Platform | Integration Skills |
+|---|---|
+| LitmusChaos MCP | s14-s20 |
+| Gremlin MCP | s14-s17 |
+| Steadybit MCP | s14-s20 |
+| AWS FIS + Bedrock | s18 |
+| Harness Chaos (native) | s14-s20 |
+
+---
+
 ## Project Principles
 
-All 32 skills are designed around these core principles:
+All 33 skills are designed around these core principles:
 
 | Principle | Description |
 |---|---|
@@ -474,59 +557,41 @@ All 32 skills are designed around these core principles:
 
 ```
 hybrid-harness-chaos-process-prm/
-├── README.md                    ← You are here
-├── LICENSE                      ← MIT
-├── CLAUDE.md                    ← Canonical entry point for all AI agents
+├── README.md                    <- You are here
+├── LICENSE                      <- MIT
+├── CLAUDE.md                    <- Canonical entry point for all AI agents
+├── pyproject.toml               <- Python tooling config + CLI entry points
 │
 ├── .commandcode/
-│   ├── taste/taste.md           ← Developer preferences (auto-managed by s02)
-│   ├── progress.json            ← Workflow state (auto-managed by s03)
-│   ├── prd.md                   ← Product Requirements Document (produced by s01)
-│   ├── adr/                     ← Architecture Decision Records (produced by s01)
-│   ├── backlog.md               ← Prioritized backlog (produced by s01)
-│   └── artifacts/               ← All YAML, scripts, reports produced by skills
+│   ├── taste/taste.md           <- Developer preferences (auto-managed by s02)
+│   ├── progress.json            <- Workflow state (auto-managed by s03)
+│   ├── prd.md                   <- Product Requirements Document (produced by s01)
+│   ├── adr/                     <- Architecture Decision Records (produced by s01)
+│   ├── backlog.md               <- Prioritized backlog (produced by s01)
+│   └── artifacts/               <- All YAML, scripts, reports produced by skills
 │       ├── pipeline-*.yaml
 │       ├── security/*.sarif
 │       ├── perf/*.json
 │       ├── experiment-*.yaml
 │       ├── resilience-*.json
+│       ├── research/            <- Deep research reports (produced by s32)
 │       ├── dr/
 │       ├── compliance/
 │       └── releases/
 │
-└── skills/                      ← 32 skills in Agile workflow order
+├── tools/                       <- CLI tools for the skill framework
+│   ├── validate_skills.py       <- Validate all SKILL.md files
+│   ├── generate_docs.py         <- Auto-generate SKILLS-CATALOG.md
+│   ├── scaffold_skill.py        <- Create new skills from templates
+│   ├── shared/                  <- Shared utilities (constants, models, parsers)
+│   └── chaos_mcp_server/       <- MCP server for LitmusChaos + Harness Chaos
+│
+└── skills/                      <- 33 skills in Agile workflow order
+    ├── AI-AGENT-MAPPING.md      <- Harness AI agent mapping + autonomy model
+    ├── SKILLS-CATALOG.md        <- Auto-generated skill catalog
     ├── s00-orchestrator/SKILL.md
-    ├── s01-ba-requirements/SKILL.md
-    ├── s02-taste-memory/SKILL.md
-    ├── s03-progress-tracker/SKILL.md
-    ├── s04-pipeline-design/SKILL.md
-    ├── s05-service-onboarding/SKILL.md
-    ├── s06-delegate-management/SKILL.md
-    ├── s07-secrets-management/SKILL.md
-    ├── s08-feature-flags/SKILL.md
-    ├── s09-template-library/SKILL.md
-    ├── s10-gitops/SKILL.md
-    ├── s11-security-scanning/SKILL.md
-    ├── s12-cloakbrowser-testing/SKILL.md
-    ├── s13-performance-testing/SKILL.md
-    ├── s14-experiment-design/SKILL.md
-    ├── s15-hypothesis-validation/SKILL.md
-    ├── s16-blast-radius-control/SKILL.md
-    ├── s17-steady-state/SKILL.md
-    ├── s18-infrastructure-faults/SKILL.md
-    ├── s19-application-faults/SKILL.md
-    ├── s20-game-day-planning/SKILL.md
-    ├── s21-cv-verification/SKILL.md
-    ├── s22-observability-integration/SKILL.md
-    ├── s23-alerting-recommendations/SKILL.md
-    ├── s24-policy-governance/SKILL.md
-    ├── s25-cloud-cost-management/SKILL.md
-    ├── s26-resilience-scoring/SKILL.md
-    ├── s27-postmortem-learning/SKILL.md
-    ├── s28-release-management/SKILL.md
-    ├── s29-disaster-recovery/SKILL.md
-    ├── s30-compliance-audit/SKILL.md
-    └── s31-strategic-creator/SKILL.md
+    ├── ...                      <- s01-s31
+    └── s32-deep-research/SKILL.md
 ```
 
 ---

@@ -29,3 +29,10 @@ venv/
 
 # Logs
 *.log
+
+# Agents
+.claude
+docs
+CLAUDE.md
+
+.git
