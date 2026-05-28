@@ -1,7 +1,7 @@
 # Design Spec: s33 System Optimization (s33)
 
 **Date**: 2026-05-28
-**Status**: Draft
+**Status**: Approved
 **Author**: s33 design session
 **Scope**: New optional skill -- callable at any phase
 
