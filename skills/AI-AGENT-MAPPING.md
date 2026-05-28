@@ -1,6 +1,6 @@
 # AI Agent Mapping -- Harness Engineering + Chaos Engineering
 
-**Last Updated**: 2026-05-27
+**Last Updated**: 2026-05-28
 **Based On**: Deep Research Report (34 sources, comprehensive mode)
 
 ---
@@ -130,12 +130,13 @@ Harness AI operates as a network of 6 specialized agents backed by a Software De
 | s29 Disaster Recovery | SRE Agent | L1 | L2 | DR plan generation, failover runbook creation, RTO/RPO validation | Failover execution, backup restoration |
 | s30 Compliance Audit | AppSec/STO Agent | L1 | L2 | Evidence collection, control mapping, audit trail generation | Audit sign-off, exception approval |
 
-### Strategic Innovation (s31-s32)
+### Strategic Innovation & Optimization (s31-s33)
 
 | Skill | Harness AI Agent | Current Level | Target Level | AI Capabilities | Human Gates |
 |---|---|---|---|---|---|
 | s31 Strategic Creator | None (advisory by design) | L1 | L1 | Innovation dimensions, proposal generation, trade-off analysis | All proposals (advisory only) |
 | s32 Deep Research | None (research by design) | L1 | L1 | Multi-source research, evidence synthesis, debrief facilitation | All recommendations (advisory only) |
+| s33 System Optimization | Test Agent (M1/M3), AppSec/STO Agent (M6), SRE Agent (M4/M5), DevOps Agent (M2) | L2 | L2 | Multi-module audit (latency, N+1, stress, atomicity, concurrency, security), artifact generation, cross-module intelligence | Module selection, M7 proposals, artifact review, remediation dispatch |
 
 ---
 
