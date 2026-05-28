@@ -1,7 +1,7 @@
 # Skills Catalog
 
-**Generated from**: 33 SKILL.md files
-**Total skills**: 33
+**Generated from**: 34 SKILL.md files
+**Total skills**: 34
 
 ---
 
@@ -42,6 +42,7 @@
 | s30 | compliance-audit | Resilience & Continuity | L1/L2 | Harness AI AppSec/STO Agent |
 | s31 | strategic-creator | Any | L1/L1 | None (advisory by design) |
 | s32 | deep-research | Any | L1/L1 | None (research by design) |
+| s33 | system-optimization | Any | L2/L2 | Harness AI Test Agent (M1/M3), AppSec/STO Agent (M6), SRE Agent (M4/M5), DevOps Agent (M2) |
 
 ---
 
@@ -49,15 +50,15 @@
 
 | AI Agent | Skills Covered |
 |---|---|
-| Harness AI AppSec/STO Agent | s11 (L2/L3), s30 (L1/L2) |
-| Harness AI DevOps Agent | s05 (L2/L3), s06 (L1/L2), s07 (L1/L2), s08 (L2/L3), s09 (L1/L2), s10 (L2/L3), s24 (L2/L3), s28 (L1/L2) |
+| Harness AI AppSec/STO Agent | s11 (L2/L3), s30 (L1/L2), s33-M6 (L2/L2) |
+| Harness AI DevOps Agent | s05 (L2/L3), s06 (L1/L2), s07 (L1/L2), s08 (L2/L3), s09 (L1/L2), s10 (L2/L3), s24 (L2/L3), s28 (L1/L2), s33-M2 (L2/L2) |
 | Harness AI DevOps Agent (Claude Opus 4.5 via Vertex AI) | s04 (L2/L3) |
 | Harness AI DevOps Agent (Claude Opus 4.5) | s01 (L1/L2) |
 | Harness AI FinOps Agent | s25 (L2/L3) |
 | Harness AI Knowledge Graph | s03 (L2/L3) |
 | Harness AI Reliability Agent | s14 (L1/L2), s15 (L1/L2), s16 (L1/L2), s17 (L1/L2), s18 (L1/L2), s19 (L1/L2), s20 (L1/L2), s26 (L2/L3) |
-| Harness AI SRE Agent | s21 (L1/L2), s22 (L1/L2), s23 (L2/L3), s27 (L2/L3), s29 (L1/L2) |
-| Harness AI Test Agent | s12 (L2/L3), s13 (L1/L2) |
+| Harness AI SRE Agent | s21 (L1/L2), s22 (L1/L2), s23 (L2/L3), s27 (L2/L3), s29 (L1/L2), s33-M4/M5 (L2/L2) |
+| Harness AI Test Agent | s12 (L2/L3), s13 (L1/L2), s33-M1/M3 (L2/L2) |
 | None (advisory by design) | s31 (L1/L1) |
 | None (internal skill, no external AI agent) | s02 (L2/L2) |
 | None (research by design) | s32 (L1/L1) |
@@ -86,13 +87,13 @@
 | Level | Count | Skills |
 |---|---|---|
 | L1 | 20 | s00, s01, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s31, s32 |
-| L2 | 13 | s02, s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27 |
+| L2 | 14 | s02, s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27, s33 |
 
 ### Target Levels
 | Level | Count | Skills |
 |---|---|---|
 | L1 | 2 | s31, s32 |
-| L2 | 18 | s01, s02, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30 |
+| L2 | 19 | s01, s02, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s33 |
 | L3 | 13 | s00, s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27 |
 
 ---
@@ -134,3 +135,4 @@
 | s30 compliance-audit | s01, s06, s11, s22, s26, s28, s29 | s29-disaster-recovery |
 | s31 strategic-creator | s00, s01, s02 | None |
 | s32 deep-research | s00, s01, s02 | None |
+| s33 system-optimization | s00, s01, s02, s05, s11, s13 | s01, s04, s05, s11, s13, s14, s25, s26, s28, s31, s32 |
