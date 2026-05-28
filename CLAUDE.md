@@ -96,6 +96,9 @@ hybrid-harness-chaos-process-prm/
 
     RESEARCH (32 — callable anytime)
     └── s32-deep-research/             ← Multi-source research, evidence synthesis, debrief
+
+    OPTIMIZATION (33 -- callable anytime)
+    └── s33-system-optimization/       ← Latency, N+1, stress, atomicity, concurrency, security audit
 ```
 
 ---
@@ -114,6 +117,9 @@ PHASE 1: PLANNING & REQUIREMENTS
 
 ── s32 (DEEP RESEARCH — callable at ANY phase) ──
      ↑↓ evidence-grounded research + brainstorming debrief
+
+── s33 (SYSTEM OPTIMIZATION -- callable at ANY phase) ──
+     ↑↓ 7-module audit: latency, N+1, stress, atomicity, concurrency, security, agent-proposed
 
 PHASE 2: CI/CD SCAFFOLDING
   s04 → s05 → s06 → s07 → s08 → s09 → s10
@@ -320,6 +326,7 @@ FF_<TYPE>_<DOMAIN>_<FEATURE>
 | 30 | Compliance & Audit | Learn | compliance, audit, SOC2, HIPAA, GDPR |
 | 31 | Strategic Creator | Any | think bigger, brainstorm, propose, innovate, upgrade |
 | 32 | Deep Research | Any | research this, find papers, literature review, evidence for |
+| 33 | System Optimization | Any | optimize, latency, N+1, stress test, CCU, atomicity, race condition, security audit |
 
 ---
 
@@ -352,6 +359,7 @@ Every skill declares its autonomy level in its SKILL.md:
 | FinOps Agent | Harness AI | s25 |
 | AppSec/STO Agent | Harness AI | s11, s30 |
 | Knowledge Graph | Harness AI | s03 |
+| Test Agent (M1/M3), AppSec/STO Agent (M6), SRE Agent (M4/M5), DevOps Agent (M2) | Harness AI | s33 |
 
 ### MCP Integration (Chaos Skills)
 
