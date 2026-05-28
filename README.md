@@ -1,9 +1,9 @@
-# hybrid-harness-chaos-process-prm (v.0.2)
+# hybrid-harness-chaos-process-prm (v.0.3)
 
-**A 33-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, and deep research, purpose-built for the era of AI-assisted development.**
+**A 34-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, and system optimization, purpose-built for the era of AI-assisted development.**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-33-00b894.svg)](skills/)
+[![Skills](https://img.shields.io/badge/skills-34-00b894.svg)](skills/)
 [![AI Compatible](https://img.shields.io/badge/AI-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20GPT--4-8A2BE2.svg)]()
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg)](tools/)
 
@@ -11,7 +11,7 @@
 
 ## What Is This?
 
-This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 33-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, and deep research.
+This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 34-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, deep research, and system optimization.
 
 **It's not a framework you install. It's a workflow you clone and point your AI agent at.**
 
@@ -19,8 +19,9 @@ This repository is a **complete, production-grade skill library** designed to be
 Ideation → BA Analysis → CI/CD → Security Gate → Testing → Chaos → Game Day
 → Verification → Alerting → Governance → Release → DR → Compliance → Strategic Review
 → Deep Research (anytime)
+→ System Optimization (anytime)
 
-Also: AI Agent Integration across all 33 skills with Harness AI agents + MCP
+Also: AI Agent Integration across all 34 skills with Harness AI agents + MCP
 ```
 
 ---
@@ -140,6 +141,11 @@ skills/sNN-<name>/
 | # | Skill | Purpose |
 |---|-------|---------|
 | 32 | Deep Research | Multi-source research engine (Google Scholar, arXiv, official docs, industry blogs) with evidence synthesis and interactive brainstorming debrief -- every claim grounded in external evidence |
+
+### System Optimization (33 -- callable at any phase)
+| # | Skill | Purpose |
+|---|-------|---------|
+| 33 | System Optimization | 7-module deep-dive audit: request latency analysis, N+1 query detection, concurrent user stress testing (N CCU), atomicity verification, concurrency auditing (rate limits, locks, queues, race conditions), security vulnerability auditing (OWASP Top 10), and agent-proposed evaluations -- produces executable k6 scripts, SQLMap/ZAP configs, and custom audit tools |
 
 ---
 
@@ -266,7 +272,7 @@ echo "============================================"
 echo " ✅ Skill library installed successfully!"
 echo "============================================"
 echo ""
-echo "   Skills: $TARGET_DIR/skills/ (33 skills)"
+echo "   Skills: $TARGET_DIR/skills/ (34 skills)"
 echo "   Taste:  .commandcode/taste/taste.md"
 echo "   Config: CLAUDE.md"
 echo ""
@@ -348,7 +354,7 @@ Write-Host "============================================" -ForegroundColor Cyan
 Write-Host " ✅ Skill library installed successfully!" -ForegroundColor Green
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "   Skills: $TargetDir\skills\ (33 skills)" -ForegroundColor White
+Write-Host "   Skills: $TargetDir\skills\ (34 skills)" -ForegroundColor White
 Write-Host "   Taste:  .commandcode\taste\taste.md" -ForegroundColor White
 Write-Host "   Config: CLAUDE.md" -ForegroundColor White
 Write-Host ""
@@ -451,7 +457,7 @@ Principles: Safety first. Hypothesis-driven. Security as a gate. Infrastructure 
 The project includes CLI tools for validation, documentation, scaffolding, and chaos engineering integration:
 
 ```bash
-# Validate all 33 SKILL.md files for structural correctness
+# Validate all 34 SKILL.md files for structural correctness
 python tools/validate_skills.py
 
 # Generate SKILLS-CATALOG.md from skill metadata
@@ -477,7 +483,7 @@ Install all tools: `pip install -e .` (requires Python 3.11+)
 
 ## AI Agent Architecture
 
-All 33 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
+All 34 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
 
 ### SRE Autonomy Levels (Google SRE Framework)
 
@@ -497,12 +503,12 @@ Current project state: **L1-L2**. Target: **L2-L3**. Safety-critical skills (s16
 
 | Agent | Model | Skills Covered |
 |---|---|---|
-| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s04-s10, s24, s28 |
+| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s04-s10, s24, s28, s33-M2 |
 | Reliability Agent | Harness AI | s14-s20, s26 |
-| SRE Agent | Harness AI | s21-s23, s27, s29 |
-| Test Agent | Harness AI | s12-s13 |
+| SRE Agent | Harness AI | s21-s23, s27, s29, s33-M4/M5 |
+| Test Agent | Harness AI | s12-s13, s33-M1/M3 |
 | FinOps Agent | Harness AI | s25 |
-| AppSec/STO Agent | Harness AI | s11, s30 |
+| AppSec/STO Agent | Harness AI | s11, s30, s33-M6 |
 | Knowledge Graph | Harness AI | s03 |
 
 ### MCP Integration (Chaos Skills)
@@ -521,7 +527,7 @@ Chaos engineering skills (s14-s20) can interact with chaos platforms through MCP
 
 ## Project Principles
 
-All 33 skills are designed around these core principles:
+All 34 skills are designed around these core principles:
 
 | Principle | Description |
 |---|---|
@@ -575,6 +581,7 @@ hybrid-harness-chaos-process-prm/
 │       ├── experiment-*.yaml
 │       ├── resilience-*.json
 │       ├── research/            <- Deep research reports (produced by s32)
+│       ├── optimization/        <- System optimization reports (produced by s33)
 │       ├── dr/
 │       ├── compliance/
 │       └── releases/
@@ -586,12 +593,12 @@ hybrid-harness-chaos-process-prm/
 │   ├── shared/                  <- Shared utilities (constants, models, parsers)
 │   └── chaos_mcp_server/       <- MCP server for LitmusChaos + Harness Chaos
 │
-└── skills/                      <- 33 skills in Agile workflow order
+└── skills/                      <- 34 skills in Agile workflow order
     ├── AI-AGENT-MAPPING.md      <- Harness AI agent mapping + autonomy model
     ├── SKILLS-CATALOG.md        <- Auto-generated skill catalog
     ├── s00-orchestrator/SKILL.md
-    ├── ...                      <- s01-s31
-    └── s32-deep-research/SKILL.md
+    ├── ...                      <- s01-s32
+    └── s33-system-optimization/SKILL.md
 ```
 
 ---

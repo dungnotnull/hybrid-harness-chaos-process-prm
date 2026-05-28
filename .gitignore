@@ -33,6 +33,5 @@ venv/
 # Agents
 .claude
 docs
-CLAUDE.md
 
 .git
