@@ -11,7 +11,7 @@
 
 ## What This Project Does
 
-This repository defines a **33-skill Agile workflow** covering the complete SDLC from ideation to production operations:
+This repository defines a **34-skill Agile workflow** covering the complete SDLC from ideation to production operations:
 
 | Domain | Purpose |
 |---|---|
@@ -40,7 +40,7 @@ hybrid-harness-chaos-process-prm/
 │   ├── backlog.md                     ← Prioritized backlog
 │   └── artifacts/                     ← All outputs produced by skills
 │
-└── skills/                            ← 33 skills in Agile workflow order
+└── skills/                            ← 34 skills in Agile workflow order
 
     AI-AGENT-MAPPING.md               ← Harness AI agent mapping + autonomy model
 
@@ -99,6 +99,9 @@ hybrid-harness-chaos-process-prm/
 
     OPTIMIZATION (33 -- callable anytime)
     └── s33-system-optimization/       ← Latency, N+1, stress, atomicity, concurrency, security audit
+
+    DOCUMENTATION (34 -- callable anytime)
+    └── s34-documentation-writing/     ← Technical docs, userflows, usage guides, README generation
 ```
 
 ---
@@ -120,6 +123,9 @@ PHASE 1: PLANNING & REQUIREMENTS
 
 ── s33 (SYSTEM OPTIMIZATION -- callable at ANY phase) ──
      ↑↓ 7-module audit: latency, N+1, stress, atomicity, concurrency, security, agent-proposed
+
+── s34 (DOCUMENTATION -- callable at ANY phase) ──
+     ↑↓ Technical specs, userflow diagrams, beginner-friendly usage guides, README
 
 PHASE 2: CI/CD SCAFFOLDING
   s04 → s05 → s06 → s07 → s08 → s09 → s10
@@ -327,6 +333,7 @@ FF_<TYPE>_<DOMAIN>_<FEATURE>
 | 31 | Strategic Creator | Any | think bigger, brainstorm, propose, innovate, upgrade |
 | 32 | Deep Research | Any | research this, find papers, literature review, evidence for |
 | 33 | System Optimization | Any | optimize, latency, N+1, stress test, CCU, atomicity, race condition, security audit |
+| 34 | Documentation Writing | Any | docs, README, user guide, technical spec, userflow, usage instructions, how to use |
 
 ---
 
