@@ -11,6 +11,7 @@
 |---|---|---|---|---|
 | s00 | workflow-orchestrator | Foundation | L1/L3 | Workflow Orchestration (Harness AI Intelligent Workflow Orchestration layer) |
 | s01 | ba-requirements-analysis | Foundation | L1/L2 | Harness AI DevOps Agent (Claude Opus 4.5) |
+| s01-1 | user-flow-writing | Foundation | L1/L2 | Harness AI DevOps Agent / Test Agent |
 | s02 | taste-memory-management | Foundation | L2/L2 | None (internal skill, no external AI agent) |
 | s03 | progress-tracker | Foundation | L2/L3 | Harness AI Knowledge Graph |
 | s04 | harness-pipeline-design | CI/CD Scaffolding | L2/L3 | Harness AI DevOps Agent (Claude Opus 4.5 via Vertex AI) |
@@ -103,7 +104,8 @@
 | Skill | References (Input From) | Referenced By (Output To) |
 |---|---|---|
 | s00 workflow-orchestrator | None | s01-ba-requirements, s03-progress-tracker, s31-strategic-creator, s32-deep-research |
-| s01 ba-requirements-analysis | s00, s25 | s04-pipeline-design, s05-service-onboarding, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s15-hypothesis-validation, s16-blast-radius-control, s17-steady-state, s18-infrastructure-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s24-policy-governance, s25-cloud-cost-management, s29-disaster-recovery, s30-compliance-audit, s31-strategic-creator, s32-deep-research |
+| s01 ba-requirements-analysis | s00, s25 | s01-1-user-flow-writing, s04-pipeline-design, s05-service-onboarding, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s15-hypothesis-validation, s16-blast-radius-control, s17-steady-state, s18-infrastructure-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s24-policy-governance, s25-cloud-cost-management, s29-disaster-recovery, s30-compliance-audit, s31-strategic-creator, s32-deep-research |
+| s01-1 user-flow-writing | s01 | s04-pipeline-design, s12-cloakbrowser-testing |
 | s02 taste-memory-management | s03 | s04-pipeline-design, s05-service-onboarding, s06-delegate-management, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s16-blast-radius-control, s18-infrastructure-faults, s19-application-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s23-alerting-recommendations, s24-policy-governance, s25-cloud-cost-management, s28-release-management, s31-strategic-creator, s32-deep-research |
 | s03 progress-tracker | s00 | s02-taste-memory |
 | s04 harness-pipeline-design | s01, s02 | s05-service-onboarding, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s14-experiment-design, s21-cv-verification, s24-policy-governance, s28-release-management |
