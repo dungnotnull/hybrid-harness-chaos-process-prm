@@ -16,14 +16,14 @@ This repository is a **complete, production-grade skill library** designed to be
 
 **It's not a framework you install. It's a workflow you clone and point your AI agent at.**
 
-`	ext
+```text
 Ideation → BA Analysis → CI/CD → Security Gate → Testing → Chaos → Game Day
 → Verification → Alerting → Governance → Release → DR → Compliance → Strategic Review
 → Deep Research (anytime) → System Optimization (anytime) → Documentation (anytime)
 → Devil's Advocate Critique (anytime)
 
 Also: AI Agent Integration across all 37 skills with Harness AI agents + MCP
-`
+```
 
 ---
 
@@ -59,7 +59,7 @@ Modern development is increasingly agentic — AI agents write code, design pipe
 
 Every skill follows the same structure:
 
-``
+```text
 skills/sNN-<name>/
 └── SKILL.md              # Primary instruction file (YAML frontmatter + Markdown body)
     ├── Input Contract     # What this skill needs before it can run
@@ -69,7 +69,7 @@ skills/sNN-<name>/
     ├── AI Agent Integration  # Autonomy level, Harness AI agent, human gates, MCP
     ├── Templates/Examples # Runnable YAML, scripts, configuration
     └── Success Criteria   # Measurable completion checklist
-``
+```
 
 ---
 
@@ -174,30 +174,30 @@ skills/sNN-<name>/
 
 ### 1. Clone the repository
 
-``bash
+```bash
 git clone https://github.com/dungnotnull/hybrid-harness-chaos-process-prm.git
 cd hybrid-harness-chaos-process-prm
-``
+```
 
 ### 2. Install tools
 
-``bash
+```bash
 pip install -e .
-``
+```
 
 ### 3. Initialize progress tracking
 
-``bash
+```bash
 progress-tracker init --project-name "my-project"
 progress-tracker status
-``
+```
 
 ### 4. Point your AI agent at it
 
 For **Claude Code** (Anthropic):
-``bash
+```bash
 claude --project hybrid-harness-chaos-process-prm
-``
+```
 Claude Code automatically reads CLAUDE.md and discovers the skill library.
 
 For **other agents** (Codex, Gemini, GPT-4 via API):
@@ -222,13 +222,13 @@ The project includes CLI tools for validation, documentation, scaffolding, progr
 
 | Tool | Purpose |
 |---|---|
-| alidate-skills | Checks frontmatter, required sections, autonomy levels, cross-references, duplicates |
+| validate-skills | Checks frontmatter, required sections, autonomy levels, cross-references, duplicates |
 | generate-docs | Auto-generates SKILLS-CATALOG.md with agent coverage matrix, MCP matrix, autonomy distribution |
 | scaffold-skill | Creates new skills with AI integration metadata auto-filled from phase/agent defaults |
 | progress-tracker | Full CLI for workflow state management — init, status, transition, block, resolve, report, handoff |
 | chaos-mcp-server | MCP server with 9 tools for LitmusChaos and Harness Chaos operations (dry-run by default) |
 
-`ash
+```bash
 # Validate all 36 SKILL.md files
 validate-skills --project-root .
 
@@ -252,7 +252,7 @@ progress-tracker block "Waiting for security approval" --phase 11-security-scann
 
 # Generate a handoff summary
 progress-tracker handoff
-``
+```
 
 ---
 
@@ -321,10 +321,10 @@ Every PR is validated by .github/workflows/ci.yml:
 
 ### 3. Pre-commit Hooks
 Install pre-commit for local quality enforcement:
-`ash
+```bash
 pip install pre-commit
 pre-commit install
-`
+```
 
 Hooks enforce:
 - Skill validation before commits
@@ -378,7 +378,7 @@ All 37 skills are designed around these core principles:
 
 ## Directory Layout
 
-``
+```text
 hybrid-harness-chaos-process-prm/
 ├── README.md                    <- You are here
 ├── CLAUDE.md                    <- Canonical entry point for all AI agents
@@ -442,7 +442,7 @@ hybrid-harness-chaos-process-prm/
     ├── s00-orchestrator/SKILL.md
     ├── ...                      <- s01-s34
     └── s35-devils-advocate/SKILL.md  <- 🆕 Adversarial critique
-``
+```
 
 ---
 
