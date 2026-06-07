@@ -1,0 +1,32 @@
+﻿{
+  "name": "hybrid-harness-chaos-process",
+  "version": "0.5.0",
+  "description": "A 36-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, system optimization, documentation, and adversarial critique. Purpose-built for AI-assisted development.",
+  "author": "dungnotnull",
+  "license": "MIT",
+  "repository": "https://github.com/dungnotnull/hybrid-harness-chaos-process-prm",
+  "compatibility": {
+    "claude-code": true,
+    "claude-cowork": true,
+    "codex": true,
+    "gemini": true,
+    "gpt4": true,
+    "any-llm": true
+  },
+  "entrypoint": "CLAUDE.md",
+  "skills_dir": "skills",
+  "commands_dir": ".claude-plugin/commands",
+  "triggers": {
+    "orchestrate": ["start workflow", "run full process", "orchestrate", "begin project"],
+    "analyze": ["analyze requirements", "PRD", "requirements", "spec"],
+    "critique": ["challenge this", "stress-test", "devil's advocate", "find flaws", "counter-argument", "red team", "critique"],
+    "pipeline": ["pipeline", "CI/CD", "stages", "deploy"],
+    "security": ["SAST", "vulnerability", "CVE", "SBOM", "scan"],
+    "chaos": ["chaos experiment", "fault", "inject", "resilience test"],
+    "game-day": ["game day", "chaos day", "war game"],
+    "research": ["research this", "find papers", "literature review", "evidence for"],
+    "optimize": ["optimize", "latency", "N+1", "stress test", "race condition"],
+    "docs": ["docs", "README", "user guide", "technical spec", "how to use"],
+    "progress": ["status", "progress", "where are we", "workflow state"]
+  }
+}

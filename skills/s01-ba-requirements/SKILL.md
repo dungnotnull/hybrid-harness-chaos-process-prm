@@ -1,4 +1,4 @@
-﻿---
+---
 name: ba-requirements-analysis
 description: >
   Professional Business Analyst skill implementing the BMAD (Business Model, Architecture, Design, Analysis/Audit) methodology.

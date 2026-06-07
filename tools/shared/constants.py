@@ -1,4 +1,4 @@
-REQUIRED_FRONTMATTER_FIELDS = {"name", "description"}
+﻿REQUIRED_FRONTMATTER_FIELDS = {"name", "description"}
 
 REQUIRED_SECTIONS = [
     "Purpose",
@@ -37,6 +37,8 @@ PHASE_MAP = {
     9: "Resilience & Continuity",
 }
 
+# Skill number -> Phase mapping
+# Phase -1 means "callable at any phase"
 SKILL_PHASE_MAP = {
     0: 0, 1: 0, 2: 0, 3: 0,
     4: 2, 5: 2, 6: 2, 7: 2, 8: 2, 9: 2, 10: 2,
@@ -47,12 +49,16 @@ SKILL_PHASE_MAP = {
     21: 7, 22: 7, 23: 7,
     24: 8, 25: 8, 26: 8, 27: 8, 28: 8,
     29: 9, 30: 9,
-    31: -1,  # Any phase
-    32: -1,  # Any phase
+    31: -1,  # Any phase (Strategic Innovation)
+    32: -1,  # Any phase (Research)
+    33: -1,  # Any phase (System Optimization)
+    34: -1,  # Any phase (Documentation)
+    35: -1,  # Any phase (Devil's Advocate / Adversarial Critique)
 }
 
+# Phase -> Default agent for skills in that phase
 PHASE_AGENT_DEFAULTS = {
-    0: {"s00": "Workflow Orchestration", "s01": "DevOps Agent", "s02": "None (internal)", "s03": "Knowledge Graph"},
+    0: {"s00": "Workflow Orchestration", "s01": "DevOps Agent", "s01-1": "DevOps Agent / Test Agent", "s02": "None (internal)", "s03": "Knowledge Graph"},
     2: "DevOps Agent",
     3: "AppSec/STO Agent",
     4: "Test Agent",
@@ -61,7 +67,7 @@ PHASE_AGENT_DEFAULTS = {
     7: "SRE Agent",
     8: {"s24": "DevOps Agent", "s25": "FinOps Agent", "s26": "Reliability Agent", "s27": "SRE Agent", "s28": "DevOps Agent", "s29": "SRE Agent", "s30": "AppSec/STO Agent"},
     9: "SRE Agent",
-    -1: "None (advisory by design)",
+    -1: {"s31": "None (advisory by design)", "s32": "None (research by design)", "s33": "Multi-agent", "s34": "None (documentation by design)", "s35": "None (adversarial by design)"},
 }
 
 HARNESS_AGENTS = [
@@ -76,6 +82,9 @@ HARNESS_AGENTS = [
     "None (internal)",
     "None (advisory by design)",
     "None (research by design)",
+    "None (documentation by design)",
+    "None (adversarial by design)",
+    "Multi-agent",
 ]
 
 MCP_PLATFORMS = [
@@ -91,3 +100,6 @@ MCP_PLATFORMS = [
 
 SKILLS_DIR = "skills"
 SKILL_FILE = "SKILL.md"
+
+# Total skill count (updated for v0.5.0)
+TOTAL_SKILLS = 36

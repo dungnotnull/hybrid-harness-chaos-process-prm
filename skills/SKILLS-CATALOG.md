@@ -1,7 +1,7 @@
 # Skills Catalog
 
-**Generated from**: 34 SKILL.md files
-**Total skills**: 34
+**Generated from**: 33 SKILL.md files
+**Total skills**: 36
 
 ---
 
@@ -9,9 +9,8 @@
 
 | # | Name | Phase | Autonomy (Current/Target) | AI Agent |
 |---|---|---|---|---|
-| s00 | workflow-orchestrator | Foundation | L1/L3 | Workflow Orchestration (Harness AI Intelligent Workflow Orchestration layer) |
-| s01 | ba-requirements-analysis | Foundation | L1/L2 | Harness AI DevOps Agent (Claude Opus 4.5) |
-| s01-1 | user-flow-writing | Foundation | L1/L2 | Harness AI DevOps Agent / Test Agent |
+| s01 | user-flow-writing | Foundation | L1/L2 | Harness AI DevOps Agent / Test Agent |
+| s01 | ba-requirements-analysis | Foundation | N/A | None |
 | s02 | taste-memory-management | Foundation | L2/L2 | None (internal skill, no external AI agent) |
 | s03 | progress-tracker | Foundation | L2/L3 | Harness AI Knowledge Graph |
 | s04 | harness-pipeline-design | CI/CD Scaffolding | L2/L3 | Harness AI DevOps Agent (Claude Opus 4.5 via Vertex AI) |
@@ -43,7 +42,9 @@
 | s30 | compliance-audit | Resilience & Continuity | L1/L2 | Harness AI AppSec/STO Agent |
 | s31 | strategic-creator | Any | L1/L1 | None (advisory by design) |
 | s32 | deep-research | Any | L1/L1 | None (research by design) |
-| s33 | system-optimization | Any | L2/L2 | Harness AI Test Agent (M1/M3), AppSec/STO Agent (M6), SRE Agent (M4/M5), DevOps Agent (M2) |
+| s33 | system-optimization | Any | L2/L2 | None |
+| s34 | documentation-writing | Any | N/A | None |
+| s35 | devils-advocate | Any | L1/L2 | None (adversarial by design — intentionally independent) |
 
 ---
 
@@ -51,19 +52,20 @@
 
 | AI Agent | Skills Covered |
 |---|---|
-| Harness AI AppSec/STO Agent | s11 (L2/L3), s30 (L1/L2), s33-M6 (L2/L2) |
-| Harness AI DevOps Agent | s05 (L2/L3), s06 (L1/L2), s07 (L1/L2), s08 (L2/L3), s09 (L1/L2), s10 (L2/L3), s24 (L2/L3), s28 (L1/L2), s33-M2 (L2/L2) |
+| Harness AI AppSec/STO Agent | s11 (L2/L3), s30 (L1/L2) |
+| Harness AI DevOps Agent | s05 (L2/L3), s06 (L1/L2), s07 (L1/L2), s08 (L2/L3), s09 (L1/L2), s10 (L2/L3), s24 (L2/L3), s28 (L1/L2) |
 | Harness AI DevOps Agent (Claude Opus 4.5 via Vertex AI) | s04 (L2/L3) |
-| Harness AI DevOps Agent (Claude Opus 4.5) | s01 (L1/L2) |
+| Harness AI DevOps Agent / Test Agent | s01 (L1/L2) |
 | Harness AI FinOps Agent | s25 (L2/L3) |
 | Harness AI Knowledge Graph | s03 (L2/L3) |
 | Harness AI Reliability Agent | s14 (L1/L2), s15 (L1/L2), s16 (L1/L2), s17 (L1/L2), s18 (L1/L2), s19 (L1/L2), s20 (L1/L2), s26 (L2/L3) |
-| Harness AI SRE Agent | s21 (L1/L2), s22 (L1/L2), s23 (L2/L3), s27 (L2/L3), s29 (L1/L2), s33-M4/M5 (L2/L2) |
-| Harness AI Test Agent | s12 (L2/L3), s13 (L1/L2), s33-M1/M3 (L2/L2) |
+| Harness AI SRE Agent | s21 (L1/L2), s22 (L1/L2), s23 (L2/L3), s27 (L2/L3), s29 (L1/L2) |
+| Harness AI Test Agent | s12 (L2/L3), s13 (L1/L2) |
+| None | s01 (N/A), s33 (L2/L2), s34 (N/A) |
+| None (adversarial by design — intentionally independent) | s35 (L1/L2) |
 | None (advisory by design) | s31 (L1/L1) |
 | None (internal skill, no external AI agent) | s02 (L2/L2) |
 | None (research by design) | s32 (L1/L1) |
-| Workflow Orchestration (Harness AI Intelligent Workflow Orchestration layer) | s00 (L1/L3) |
 
 ---
 
@@ -87,15 +89,15 @@
 ### Current Levels
 | Level | Count | Skills |
 |---|---|---|
-| L1 | 20 | s00, s01, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s31, s32 |
+| L1 | 20 | s01, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s31, s32, s35 |
 | L2 | 14 | s02, s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27, s33 |
 
 ### Target Levels
 | Level | Count | Skills |
 |---|---|---|
 | L1 | 2 | s31, s32 |
-| L2 | 19 | s01, s02, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s33 |
-| L3 | 13 | s00, s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27 |
+| L2 | 20 | s01, s02, s06, s07, s09, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s28, s29, s30, s33, s35 |
+| L3 | 12 | s03, s04, s05, s08, s10, s11, s12, s23, s24, s25, s26, s27 |
 
 ---
 
@@ -103,21 +105,20 @@
 
 | Skill | References (Input From) | Referenced By (Output To) |
 |---|---|---|
-| s00 workflow-orchestrator | None | s01-ba-requirements, s03-progress-tracker, s31-strategic-creator, s32-deep-research |
-| s01 ba-requirements-analysis | s00, s25 | s01-1-user-flow-writing, s04-pipeline-design, s05-service-onboarding, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s15-hypothesis-validation, s16-blast-radius-control, s17-steady-state, s18-infrastructure-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s24-policy-governance, s25-cloud-cost-management, s29-disaster-recovery, s30-compliance-audit, s31-strategic-creator, s32-deep-research |
-| s01-1 user-flow-writing | s01 | s04-pipeline-design, s12-cloakbrowser-testing |
-| s02 taste-memory-management | s03 | s04-pipeline-design, s05-service-onboarding, s06-delegate-management, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s16-blast-radius-control, s18-infrastructure-faults, s19-application-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s23-alerting-recommendations, s24-policy-governance, s25-cloud-cost-management, s28-release-management, s31-strategic-creator, s32-deep-research |
-| s03 progress-tracker | s00 | s02-taste-memory |
+| s01 user-flow-writing | s01 | None |
+| s01 ba-requirements-analysis | s00, s25 | s01-1-user-flow-writing, s04-pipeline-design, s05-service-onboarding, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s15-hypothesis-validation, s16-blast-radius-control, s17-steady-state, s18-infrastructure-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s24-policy-governance, s25-cloud-cost-management, s29-disaster-recovery, s30-compliance-audit, s31-strategic-creator, s32-deep-research, s33-system-optimization, s34-documentation-writing, s35-devils-advocate |
+| s02 taste-memory-management | s03 | s04-pipeline-design, s05-service-onboarding, s06-delegate-management, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s16-blast-radius-control, s18-infrastructure-faults, s19-application-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration, s23-alerting-recommendations, s24-policy-governance, s25-cloud-cost-management, s28-release-management, s31-strategic-creator, s32-deep-research, s33-system-optimization, s34-documentation-writing, s35-devils-advocate |
+| s03 progress-tracker | s00 | s02-taste-memory, s35-devils-advocate |
 | s04 harness-pipeline-design | s01, s02 | s05-service-onboarding, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s14-experiment-design, s21-cv-verification, s24-policy-governance, s28-release-management |
-| s05 harness-service-onboarding | s01, s02, s04, s06 | s06-delegate-management, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s17-steady-state, s18-infrastructure-faults, s19-application-faults, s21-cv-verification, s25-cloud-cost-management, s29-disaster-recovery |
+| s05 harness-service-onboarding | s01, s02, s04, s06 | s06-delegate-management, s07-secrets-management, s08-feature-flags, s09-template-library, s10-gitops, s11-security-scanning, s12-cloakbrowser-testing, s13-performance-testing, s14-experiment-design, s17-steady-state, s18-infrastructure-faults, s19-application-faults, s21-cv-verification, s25-cloud-cost-management, s29-disaster-recovery, s33-system-optimization |
 | s06 harness-delegate-management | s02, s05 | s05-service-onboarding, s07-secrets-management, s18-infrastructure-faults, s30-compliance-audit |
 | s07 harness-secrets-management | s01, s02, s05, s06 | None |
 | s08 harness-feature-flags | s01, s02, s05, s12, s14 | s12-cloakbrowser-testing, s14-experiment-design, s16-blast-radius-control, s23-alerting-recommendations, s28-release-management |
 | s09 harness-template-library | s01, s02, s04, s05 | s10-gitops, s24-policy-governance |
 | s10 harness-gitops | s01, s02, s04, s05, s09 | s11-security-scanning, s13-performance-testing, s28-release-management |
-| s11 security-scanning | s01, s04, s05, s10, s11 | s11-security-scanning, s13-performance-testing, s20-game-day-planning, s23-alerting-recommendations, s26-resilience-scoring, s27-postmortem-learning, s28-release-management, s30-compliance-audit |
+| s11 security-scanning | s01, s04, s05, s10, s11 | s11-security-scanning, s13-performance-testing, s20-game-day-planning, s23-alerting-recommendations, s26-resilience-scoring, s27-postmortem-learning, s28-release-management, s30-compliance-audit, s33-system-optimization |
 | s12 cloakbrowser-testing | s01, s02, s04, s05, s08, s15, s25 | s08-feature-flags, s15-hypothesis-validation, s16-blast-radius-control, s18-infrastructure-faults, s19-application-faults, s20-game-day-planning, s22-observability-integration, s23-alerting-recommendations, s26-resilience-scoring, s27-postmortem-learning |
-| s13 performance-load-testing | s01, s02, s05, s10, s11, s19 | s20-game-day-planning, s28-release-management |
+| s13 performance-load-testing | s01, s02, s05, s10, s11, s19 | s20-game-day-planning, s28-release-management, s33-system-optimization |
 | s14 chaos-experiment-design | s01, s02, s04, s05, s08 | s08-feature-flags, s15-hypothesis-validation, s18-infrastructure-faults, s19-application-faults, s20-game-day-planning, s23-alerting-recommendations, s24-policy-governance, s29-disaster-recovery |
 | s15 chaos-hypothesis-validation | s01, s12, s14, s15, s20 | s12-cloakbrowser-testing, s15-hypothesis-validation, s19-application-faults, s20-game-day-planning, s21-cv-verification, s22-observability-integration |
 | s16 chaos-blast-radius-control | s01, s02, s08, s12 | None |
@@ -136,5 +137,7 @@
 | s29 disaster-recovery-business-continuity | s01, s05, s14, s21, s26, s30 | s30-compliance-audit |
 | s30 compliance-audit | s01, s06, s11, s22, s26, s28, s29 | s29-disaster-recovery |
 | s31 strategic-creator | s00, s01, s02 | None |
-| s32 deep-research | s00, s01, s02 | None |
-| s33 system-optimization | s00, s01, s02, s05, s11, s13 | s01, s04, s05, s11, s13, s14, s25, s26, s28, s31, s32 |
+| s32 deep-research | s00, s01, s02 | s35-devils-advocate |
+| s33 system-optimization | s00, s01, s02, s05, s11, s13 | None |
+| s34 documentation-writing | s01, s02 | None |
+| s35 devils-advocate | s01, s02, s03, s32 | None |

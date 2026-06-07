@@ -1,0 +1,77 @@
+﻿# CI Pipeline for hybrid-harness-chaos-process-prm
+# Validates all skills, runs linting, and ensures structural correctness
+name: CI - Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Validate all SKILL.md files
+        run: |
+          python tools/validate_skills.py --project-root . --quiet
+
+      - name: Generate SKILLS-CATALOG.md
+        run: |
+          python tools/generate_docs.py --project-root .
+
+      - name: Check for uncommitted catalog changes
+        run: |
+          git diff --exit-code skills/SKILLS-CATALOG.md || (echo "::error::SKILLS-CATALOG.md is out of date. Run: python tools/generate_docs.py" && exit 1)
+
+      - name: Lint Python files
+        run: |
+          ruff check tools/ --line-length 100
+
+      - name: Run tests
+        run: |
+          pytest tests/ -v --tb=short
+
+  yaml-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint YAML files in skills
+        run: |
+          yamllint -d "{extends: default, rules: {line-length: {max: 200}, document-start: disable}}" skills/ -r
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          config: .markdownlint.json
+          globs: |
+            README.md
+            CLAUDE.md
+            skills/**/SKILL.md
+            docs/**/*.md

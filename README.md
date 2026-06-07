@@ -1,29 +1,29 @@
-# hybrid-harness-chaos-process-prm (v.0.4)
+﻿# hybrid-harness-chaos-process-prm (v0.5.0)
 
-**A 35-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, system optimization, and documentation writing, purpose-built for the era of AI-assisted development.**
+**A 36-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, system optimization, documentation writing, and adversarial critique, purpose-built for the era of AI-assisted development.**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-35-00b894.svg)](skills/)
+[![Skills](https://img.shields.io/badge/skills-36-00b894.svg)](skills/)
 [![AI Compatible](https://img.shields.io/badge/AI-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20GPT--4-8A2BE2.svg)]()
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg)](tools/)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green.svg)](.github/workflows/)
 
 ---
 
 ## What Is This?
 
-This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 35-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, deep research, and system optimization.
+This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 36-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, deep research, system optimization, documentation, and adversarial critique.
 
 **It's not a framework you install. It's a workflow you clone and point your AI agent at.**
 
-```text
+`	ext
 Ideation → BA Analysis → CI/CD → Security Gate → Testing → Chaos → Game Day
 → Verification → Alerting → Governance → Release → DR → Compliance → Strategic Review
-→ Deep Research (anytime)
-→ System Optimization (anytime)
-→ Documentation Writing (anytime)
+→ Deep Research (anytime) → System Optimization (anytime) → Documentation (anytime)
+→ Devil's Advocate Critique (anytime)
 
-Also: AI Agent Integration across all 35 skills with Harness AI agents + MCP
-```
+Also: AI Agent Integration across all 36 skills with Harness AI agents + MCP
+`
 
 ---
 
@@ -36,8 +36,22 @@ Modern development is increasingly agentic — AI agents write code, design pipe
 - **Standardized workflows** — Every agent follows the same battle-tested process, regardless of which LLM powers it
 - **Input/output contracts** — Skills declare what they consume and produce, preventing context loss between handoffs
 - **Safety gates** — Security scanning blocks deployment, blast radius control prevents production chaos, release management prevents Friday night deploys
+- **Adversarial critique** — Every major decision can be stress-tested through the Devil's Advocate skill (s35), adapted from the [Devil's Advocate Agent](https://github.com/dungnotnull/devils-advocate-agent)
 - **Taste memory** — Developer preferences are learned, persisted, and injected into every agent session
 - **Progress tracking** — Multi-agent sessions maintain state across interruptions; no duplicated or missed work
+
+---
+
+## What's New in v0.5.0
+
+- **s35-devils-advocate**: New adversarial critique skill adapted from [dungnotnull/devils-advocate-agent](https://github.com/dungnotnull/devils-advocate-agent). Provides 4-intensity Socratic questioning, logical fallacy detection, argument strength scoring, and multi-perspective challenge generation. Callable at ANY phase as a quality gate.
+- **Claude Plugin Manifest**: First-class [Claude Code/Cowork](https://github.com/anthropics/knowledge-work-plugins) integration via .claude-plugin/ with slash commands (/orchestrate, /critique, /progress, /validate)
+- **Progress Tracker CLI**: Full CLI tool (progress-tracker) for managing workflow state — init, status, transition, block, resolve, report, handoff
+- **GitHub Actions CI**: Automated skill validation, linting, and testing on push/PR
+- **Pre-commit Hooks**: Validates skills, checks YAML/JSON, prevents direct commits to main
+- **Issue/PR Templates**: Structured bug reports, feature requests, skill proposals, and PR checklists
+- **Security Policy**: Full SECURITY.md with vulnerability reporting and security principles
+- **Changelog**: CHANGELOG.md tracking all versions
 
 ---
 
@@ -45,17 +59,17 @@ Modern development is increasingly agentic — AI agents write code, design pipe
 
 Every skill follows the same structure:
 
-```
+``
 skills/sNN-<name>/
 └── SKILL.md              # Primary instruction file (YAML frontmatter + Markdown body)
     ├── Input Contract     # What this skill needs before it can run
     ├── Output Contract    # What this skill produces for downstream skills
     ├── Prerequisites      # External dependencies (tools, accounts, access)
-    ├── Workflow           # Step-by-step execution instructions
+    ├── Workflow            # Step-by-step execution instructions
     ├── AI Agent Integration  # Autonomy level, Harness AI agent, human gates, MCP
     ├── Templates/Examples # Runnable YAML, scripts, configuration
     └── Success Criteria   # Measurable completion checklist
-```
+``
 
 ---
 
@@ -66,6 +80,7 @@ skills/sNN-<name>/
 |---|-------|---------|
 | 00 | Orchestrator | Master workflow coordinator — dispatches phases, validates I/O contracts, maintains context |
 | 01 | BA Requirements | Professional business analysis — produces PRD, ADRs, prioritized backlog |
+| 01-1 | User Flow Writing | Multi-perspective user flow mapping with edge-case stress-testing |
 | 02 | Taste Memory | Developer preference learning — persists tastes across sessions and agents |
 | 03 | Progress Tracker | Multi-agent progress state machine — prevents duplicated and missed work |
 
@@ -133,25 +148,30 @@ skills/sNN-<name>/
 | 29 | Disaster Recovery | RTO/RPO matrix, multi-region active-active architecture, failover runbook, backup validation |
 | 30 | Compliance & Audit | SOC2/HIPAA/GDPR/PCI-DSS/ISO 27001 control mapping, auto-generated audit trail, signed evidence bundles |
 
-### Strategic Innovation (31 -- callable at any phase)
+### Strategic Innovation (31 — callable at any phase)
 | # | Skill | Purpose |
 |---|-------|---------|
-| 31 | Strategic Creator | Advisory-only brainstorming with structured trade-off analysis -- proposes, warns, never implements without user acceptance |
+| 31 | Strategic Creator | Advisory-only brainstorming with structured trade-off analysis — proposes, warns, never implements without user acceptance |
 
-### Research (32 -- callable at any phase)
+### Research (32 — callable at any phase)
 | # | Skill | Purpose |
 |---|-------|---------|
-| 32 | Deep Research | Multi-source research engine (Google Scholar, arXiv, official docs, industry blogs) with evidence synthesis and interactive brainstorming debrief -- every claim grounded in external evidence |
+| 32 | Deep Research | Multi-source research engine (Google Scholar, arXiv, official docs, industry blogs) with evidence synthesis and interactive brainstorming debrief |
 
-### System Optimization (33 -- callable at any phase)
+### System Optimization (33 — callable at any phase)
 | # | Skill | Purpose |
 |---|-------|---------|
-| 33 | System Optimization | 7-module deep-dive audit: request latency analysis, N+1 query detection, concurrent user stress testing (N CCU), atomicity verification, concurrency auditing (rate limits, locks, queues, race conditions), security vulnerability auditing (OWASP Top 10), and agent-proposed evaluations -- produces executable k6 scripts, SQLMap/ZAP configs, and custom audit tools |
+| 33 | System Optimization | 7-module deep-dive audit: request latency analysis, N+1 query detection, concurrent user stress testing, atomicity verification, concurrency auditing, security vulnerability auditing, agent-proposed evaluations |
 
-### Documentation (34 -- callable at any phase)
+### Documentation (34 — callable at any phase)
 | # | Skill | Purpose |
 |---|-------|---------|
-| 34 | Documentation Writing | Generates comprehensive project documentation: technical specs (architecture, APIs, data models), user flow diagrams (Mermaid-based journey maps), beginner-friendly usage guides (plain-language step-by-step), and README files -- audience-aware writing that scales from engineers to non-technical users |
+| 34 | Documentation Writing | Technical specs, user flow diagrams, usage guides, and README generation — audience-aware writing |
+
+### Adversarial Critique (35 — callable at any phase) 🆕
+| # | Skill | Purpose |
+|---|-------|---------|
+| 35 | Devil's Advocate | Stress-test every decision, design, hypothesis, and strategy with structured Socratic questioning, logical fallacy detection (14+ types), argument strength scoring (5 dimensions), and multi-perspective challenge generation. 4 intensity levels: Skeptic → Critic → Prosecutor → Demolisher. Adapted from [dungnotnull/devils-advocate-agent](https://github.com/dungnotnull/devils-advocate-agent). |
 
 ---
 
@@ -159,337 +179,91 @@ skills/sNN-<name>/
 
 ### 1. Clone the repository
 
-```bash
+``bash
 git clone https://github.com/dungnotnull/hybrid-harness-chaos-process-prm.git
 cd hybrid-harness-chaos-process-prm
-```
+``
 
-### 2. Point your AI agent at it
+### 2. Install tools
+
+``bash
+pip install -e .
+``
+
+### 3. Initialize progress tracking
+
+``bash
+progress-tracker init --project-name "my-project"
+progress-tracker status
+``
+
+### 4. Point your AI agent at it
 
 For **Claude Code** (Anthropic):
-```bash
+``bash
 claude --project hybrid-harness-chaos-process-prm
-```
-Claude Code automatically reads `CLAUDE.md` and discovers the skill library.
+``
+Claude Code automatically reads CLAUDE.md and discovers the skill library.
 
 For **other agents** (Codex, Gemini, GPT-4 via API):
-Include the repository as context. Start with `CLAUDE.md` as the system prompt, then reference specific skills as needed:
+Include the repository as context. Start with CLAUDE.md as the system prompt, then reference specific skills as needed.
 
-```python
-# Example: Loading the project into a custom agent
-with open("CLAUDE.md") as f:
-    system_prompt = f.read()
+### 5. Use slash commands
 
-with open("skills/s00-orchestrator/SKILL.md") as f:
-    orchestrator = f.read()
+With the Claude Plugin installed:
 
-# Agent now understands the full workflow
-response = agent.run(system_prompt + orchestrator, user_request)
-```
-
-### 3. Start your workflow
-
-```
-You: "I'm building a payment processing microservice on Kubernetes. Start the full workflow."
-```
-
-The orchestrator (s00) will:
-1. Load project context and taste preferences
-2. Initialize progress tracking
-3. Dispatch to s01 (BA Requirements) for deep project analysis
-4. Ask probing questions about your stack, SLAs, constraints, and risk tolerance
-5. Produce a complete PRD and dispatch to Phase 2
-
----
-
-## One-Click Install Script
-
-For users who want to quickly set up the skill library in their project:
-
-```bash
-#!/bin/bash
-# install-skills.sh — Clone and initialize the hybrid-harness-chaos skill library
-
-set -euo pipefail
-
-REPO_URL="https://github.com/dungnotnull/hybrid-harness-chaos-process-prm.git"
-TARGET_DIR="${1:-.commandcode/skills}"
-
-echo "============================================"
-echo " Hybrid Harness + Chaos Skill Library Setup"
-echo "============================================"
-echo ""
-
-# Clone or update
-if [ -d "$TARGET_DIR/.git" ]; then
-    echo "📦 Updating existing skill library..."
-    git -C "$TARGET_DIR" pull --ff-only
-else
-    echo "📥 Cloning skill library into $TARGET_DIR..."
-    git clone --depth 1 "$REPO_URL" "$TARGET_DIR"
-fi
-
-# Copy CLAUDE.md to project root
-if [ -f "$TARGET_DIR/CLAUDE.md" ]; then
-    cp "$TARGET_DIR/CLAUDE.md" ./CLAUDE.md
-    echo "✅ CLAUDE.md copied to project root"
-fi
-
-# Create taste directory if missing
-mkdir -p .commandcode/taste
-if [ ! -f .commandcode/taste/taste.md ]; then
-    cat > .commandcode/taste/taste.md << 'TASTE_EOF'
-# Taste — Project Preferences
-> Auto-generated developer preference model. Managed by s02-taste-memory.
-> Last updated: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-
-## Technology
-- No preferences learned yet. They will be captured as you work.
-
-## Code Style
-- No preferences learned yet.
-
-## Workflow
-- No preferences learned yet.
-
-## Risk Tolerance
-- No preferences learned yet.
-
-## Communication
-- No preferences learned yet.
-
-## Testing
-- No preferences learned yet.
-
-## Deployment
-- No preferences learned yet.
-
-## Observability
-- No preferences learned yet.
-TASTE_EOF
-    echo "✅ Taste file created at .commandcode/taste/taste.md"
-fi
-
-# Create artifacts directory
-mkdir -p .commandcode/artifacts
-
-echo ""
-echo "============================================"
-echo " ✅ Skill library installed successfully!"
-echo "============================================"
-echo ""
-echo "   Skills: $TARGET_DIR/skills/ (35 skills)"
-echo "   Taste:  .commandcode/taste/taste.md"
-echo "   Config: CLAUDE.md"
-echo ""
-echo "To start: point your AI agent at this project directory."
-echo "Example: claude --project $(pwd)"
-echo "============================================"
-```
-
-### Windows (PowerShell) install script
-
-```powershell
-# install-skills.ps1
-param(
-    [string]$TargetDir = ".commandcode\skills"
-)
-
-$RepoUrl = "https://github.com/dungnotnull/hybrid-harness-chaos-process-prm.git"
-
-Write-Host "============================================" -ForegroundColor Cyan
-Write-Host " Hybrid Harness + Chaos Skill Library Setup" -ForegroundColor Cyan
-Write-Host "============================================" -ForegroundColor Cyan
-
-if (Test-Path "$TargetDir\.git") {
-    Write-Host "`n📦 Updating existing skill library..." -ForegroundColor Yellow
-    git -C $TargetDir pull --ff-only
-} else {
-    Write-Host "`n📥 Cloning skill library into $TargetDir..." -ForegroundColor Yellow
-    git clone --depth 1 $RepoUrl $TargetDir
-}
-
-if (Test-Path "$TargetDir\CLAUDE.md") {
-    Copy-Item "$TargetDir\CLAUDE.md" ".\CLAUDE.md" -Force
-    Write-Host "✅ CLAUDE.md copied to project root" -ForegroundColor Green
-}
-
-if (-not (Test-Path ".commandcode\taste")) {
-    New-Item -ItemType Directory -Path ".commandcode\taste" -Force | Out-Null
-}
-if (-not (Test-Path ".commandcode\taste\taste.md")) {
-    $date = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-    @"
-# Taste — Project Preferences
-> Auto-generated developer preference model. Managed by s02-taste-memory.
-> Last updated: $date
-
-## Technology
-- No preferences learned yet. They will be captured as you work.
-
-## Code Style
-- No preferences learned yet.
-
-## Workflow
-- No preferences learned yet.
-
-## Risk Tolerance
-- No preferences learned yet.
-
-## Communication
-- No preferences learned yet.
-
-## Testing
-- No preferences learned yet.
-
-## Deployment
-- No preferences learned yet.
-
-## Observability
-- No preferences learned yet.
-"@ | Out-File -FilePath ".commandcode\taste\taste.md" -Encoding utf8
-    Write-Host "✅ Taste file created at .commandcode\taste\taste.md" -ForegroundColor Green
-}
-
-if (-not (Test-Path ".commandcode\artifacts")) {
-    New-Item -ItemType Directory -Path ".commandcode\artifacts" -Force | Out-Null
-}
-
-Write-Host ""
-Write-Host "============================================" -ForegroundColor Cyan
-Write-Host " ✅ Skill library installed successfully!" -ForegroundColor Green
-Write-Host "============================================" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "   Skills: $TargetDir\skills\ (35 skills)" -ForegroundColor White
-Write-Host "   Taste:  .commandcode\taste\taste.md" -ForegroundColor White
-Write-Host "   Config: CLAUDE.md" -ForegroundColor White
-Write-Host ""
-```
-
----
-
-## Supported AI Agents
-
-| Agent | Integration Method | Notes |
-|---|---|---|
-| **Claude Code** | Native — reads `CLAUDE.md` automatically | Best experience; built-in project context loading |
-| **Codex (OpenAI)** | Include `CLAUDE.md` in system prompt + reference individual skills | Structured prompts recommended |
-| **Gemini** | Upload repository, reference `CLAUDE.md` | Works best with filesystem access |
-| **GPT-4 (Custom Agents)** | Include `CLAUDE.md` + `s00-orchestrator/SKILL.md` as context | Template system prompts provided below |
-| **Any instruction-following LLM** | Structured context injection | See custom integration guide below |
-
-### Custom Agent Integration
-
-```python
-# agent_setup.py — Minimal integration for any LLM-powered agent
-from pathlib import Path
-
-class SkillAgent:
-    def __init__(self, skills_path: str = "skills"):
-        self.skills_path = Path(skills_path)
-        self.context = self._load_project_context()
-
-    def _load_project_context(self) -> dict:
-        """Load CLAUDE.md and initialize context."""
-        with open("CLAUDE.md") as f:
-            claude_md = f.read()
-
-        # Load taste if available
-        taste_path = Path(".commandcode/taste/taste.md")
-        taste = taste_path.read_text() if taste_path.exists() else ""
-
-        return {
-            "claude_md": claude_md,
-            "taste": taste,
-            "phase": "00-orchestrator",
-            "artifacts": {},
-        }
-
-    def load_skill(self, skill_id: str) -> str:
-        """Load a specific skill's instructions."""
-        skill_dir = next(self.skills_path.glob(f"{skill_id}-*"), None)
-        if not skill_dir:
-            raise FileNotFoundError(f"Skill {skill_id} not found")
-        return (skill_dir / "SKILL.md").read_text()
-
-    def run_phase(self, user_request: str) -> str:
-        """Orchestrator-style dispatch."""
-        orchestrator = self.load_skill("s00")
-        # Append to system prompt, execute, capture outputs
-        return self._execute(user_request, system_prompt=orchestrator)
-
-agent = SkillAgent()
-response = agent.run_phase("Set up a CI/CD pipeline for my payment service")
-```
-
----
-
-## System Prompt Template (for custom agents)
-
-Use this as the base system prompt when integrating with any LLM agent:
-
-```text
-You are a platform engineering agent working on the hybrid-harness-chaos-process-prm project.
-
-<project_context>
-{CLAUDE.md content}
-</project_context>
-
-<developer_preferences>
-{taste file content}
-</developer_preferences>
-
-<workflow_progress>
-Current phase: s00-orchestrator
-Next: User will specify their request. Dispatch to the appropriate skill.
-</workflow_progress>
-
-Your job:
-1. Read CLAUDE.md to understand the project and workflow.
-2. Load the orchestrator (skills/s00-orchestrator/SKILL.md) for phase dispatch logic.
-3. Determine the correct starting phase based on the user's request.
-4. Load the target skill's SKILL.md completely before acting.
-5. Verify the skill's Input Contract is satisfied.
-6. Execute following the skill's prescribed workflow.
-7. Capture outputs and update progress.
-
-Principles: Safety first. Hypothesis-driven. Security as a gate. Infrastructure as code. Always verify inputs before acting.
-```
+| Command | Description |
+|---|---|
+| /orchestrate | Start or resume the full workflow |
+| /critique [subject] | Invoke Devil's Advocate (s35) on any subject |
+| /progress | Show workflow progress dashboard |
+| /validate | Validate all SKILL.md files for structural correctness |
 
 ---
 
 ## Tools
 
-The project includes CLI tools for validation, documentation, scaffolding, and chaos engineering integration:
-
-```bash
-# Validate all 34 SKILL.md files for structural correctness
-python tools/validate_skills.py
-
-# Generate SKILLS-CATALOG.md from skill metadata
-python tools/generate_docs.py
-
-# Create a new skill with correct structure
-python tools/scaffold_skill.py --number 33 --name "my-skill" --description "desc"
-
-# Chaos MCP server (requires pip install -e ".[mcp]")
-chaos-mcp-server
-```
+The project includes CLI tools for validation, documentation, scaffolding, progress tracking, and chaos engineering integration:
 
 | Tool | Purpose |
 |---|---|
-| `validate_skills.py` | Checks frontmatter, required sections, autonomy levels, cross-references, duplicates |
-| `generate_docs.py` | Auto-generates SKILLS-CATALOG.md with agent coverage matrix, MCP matrix, autonomy distribution |
-| `scaffold_skill.py` | Creates new skills with AI integration metadata auto-filled from phase/agent defaults |
-| `chaos_mcp_server` | MCP server with 9 tools for LitmusChaos and Harness Chaos operations (dry-run by default) |
+| alidate-skills | Checks frontmatter, required sections, autonomy levels, cross-references, duplicates |
+| generate-docs | Auto-generates SKILLS-CATALOG.md with agent coverage matrix, MCP matrix, autonomy distribution |
+| scaffold-skill | Creates new skills with AI integration metadata auto-filled from phase/agent defaults |
+| progress-tracker | Full CLI for workflow state management — init, status, transition, block, resolve, report, handoff |
+| chaos-mcp-server | MCP server with 9 tools for LitmusChaos and Harness Chaos operations (dry-run by default) |
 
-Install all tools: `pip install -e .` (requires Python 3.11+)
+`ash
+# Validate all 36 SKILL.md files
+validate-skills --project-root .
+
+# Generate SKILLS-CATALOG.md
+generate-docs --project-root .
+
+# Create a new skill with correct structure
+scaffold-skill --number 36 --name "my-skill" --description "desc"
+
+# Initialize workflow progress
+progress-tracker init --project-name "my-project"
+
+# Check status
+progress-tracker status
+
+# Transition a phase
+progress-tracker transition 04-pipeline-design in_progress --agent "claude-code"
+
+# Add a blocker
+progress-tracker block "Waiting for security approval" --phase 11-security-scanning
+
+# Generate a handoff summary
+progress-tracker handoff
+``
 
 ---
 
 ## AI Agent Architecture
 
-All 35 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
+All 36 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
 
 ### SRE Autonomy Levels (Google SRE Framework)
 
@@ -503,23 +277,22 @@ Every skill declares its autonomy level in its SKILL.md:
 | **L3** | Delegated | AI executes, human reviews |
 | **L4** | Full Autonomy | AI acts independently |
 
-Current project state: **L1-L2**. Target: **L2-L3**. Safety-critical skills (s16, s29) remain L1-L2 permanently.
+Current project state: **L1-L2**. Target: **L2-L3**. Safety-critical skills (s16, s29) remain L1-L2 permanently. Devil's Advocate (s35) is **adversarial by design** — intentionally independent of any Harness AI agent.
 
 ### Harness AI Agent Coverage
 
 | Agent | Model | Skills Covered |
 |---|---|---|
-| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s04-s10, s24, s28, s33-M2 |
+| DevOps Agent | Claude Opus 4.5 (Vertex AI) | s01, s01-1, s04-s10, s24, s28, s33-M2 |
 | Reliability Agent | Harness AI | s14-s20, s26 |
 | SRE Agent | Harness AI | s21-s23, s27, s29, s33-M4/M5 |
 | Test Agent | Harness AI | s12-s13, s33-M1/M3 |
 | FinOps Agent | Harness AI | s25 |
 | AppSec/STO Agent | Harness AI | s11, s30, s33-M6 |
 | Knowledge Graph | Harness AI | s03 |
+| **None (adversarial by design)** | — | **s35** |
 
 ### MCP Integration (Chaos Skills)
-
-Chaos engineering skills (s14-s20) can interact with chaos platforms through MCP servers:
 
 | Platform | Integration Skills |
 |---|---|
@@ -531,9 +304,50 @@ Chaos engineering skills (s14-s20) can interact with chaos platforms through MCP
 
 ---
 
+## Development Phase Tracking
+
+This project uses **multiple layers** of development phase tracking:
+
+### 1. Local State (.commandcode/progress.json)
+The progress-tracker CLI manages local workflow state:
+- Init: progress-tracker init
+- Status: progress-tracker status
+- Transition: progress-tracker transition <phase> <status>
+- Block: progress-tracker block "description"
+- Handoff: progress-tracker handoff
+
+### 2. CI/CD Gates (GitHub Actions)
+Every PR is validated by .github/workflows/ci.yml:
+- All SKILL.md files pass structural validation
+- Python code passes linting (ruff)
+- YAML frontmatter is valid
+- Cross-references between skills are correct
+- SKILLS-CATALOG.md is up to date
+
+### 3. Pre-commit Hooks
+Install pre-commit for local quality enforcement:
+`ash
+pip install pre-commit
+pre-commit install
+`
+
+Hooks enforce:
+- Skill validation before commits
+- YAML/JSON syntax checking
+- Trailing whitespace removal
+- Prevent direct commits to main
+
+### 4. Issue Tracking (GitHub Issues)
+Use structured templates for:
+- Bug reports (.github/ISSUE_TEMPLATE/bug_report.md)
+- Feature requests (.github/ISSUE_TEMPLATE/feature_request.md)
+- Skill proposals (.github/ISSUE_TEMPLATE/skill_proposal.md)
+
+---
+
 ## Project Principles
 
-All 35 skills are designed around these core principles:
+All 36 skills are designed around these core principles:
 
 | Principle | Description |
 |---|---|
@@ -544,6 +358,7 @@ All 35 skills are designed around these core principles:
 | **Observability as a Gate** | Every deployment has a verification step. Every chaos experiment has monitoring active. No observability = execution blocked. |
 | **Infrastructure as Code** | All resources expressed as YAML. No manual UI-only changes. Everything reproducible from version control. |
 | **Least Privilege** | Delegates scoped to namespaces. Chaos accounts scoped to targets. Secrets never in logs. |
+| **Adversarial Quality Gates** | Every major decision can be stress-tested through s35 (Devil's Advocate). No design, hypothesis, or release goes unchallenged. |
 | **Release Governance** | Every production deploy has a Go/No-Go checklist. Deployment calendars respected. Rollback tested before deployment. |
 | **Compliance is Continuous** | Audit trails auto-generated quarterly. Evidence signed and timestamped. Control mapping updated with every new skill. |
 | **Taste-Aware Execution** | Developer preferences learned and persisted. New agents inherit prior preferences. Corrections captured at high confidence. |
@@ -562,17 +377,35 @@ All 35 skills are designed around these core principles:
 | **Infrastructure** | Kubernetes, Helm, ArgoCD, Velero |
 | **Secrets** | HashiCorp Vault, AWS Secrets Manager, GCP Secret Manager |
 | **Governance** | Open Policy Agent (OPA/Rego) |
+| **Adversarial Critique** | Devil's Advocate Agent (fallacy detection, argument scoring) |
 
 ---
 
 ## Directory Layout
 
-```
+``
 hybrid-harness-chaos-process-prm/
 ├── README.md                    <- You are here
-├── LICENSE                      <- MIT
 ├── CLAUDE.md                    <- Canonical entry point for all AI agents
+├── CHANGELOG.md                 <- Version history
+├── SECURITY.md                  <- Security policy and vulnerability reporting
 ├── pyproject.toml               <- Python tooling config + CLI entry points
+├── .pre-commit-config.yaml      <- Pre-commit hooks for quality enforcement
+├── .markdownlint.json           <- Markdown linting config
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml               <- CI pipeline (validate, lint, test)
+│   │   └── release.yml          <- Release automation
+│   ├── ISSUE_TEMPLATE/           <- Bug reports, feature requests, skill proposals
+│   └── PULL_REQUEST_TEMPLATE.md <- PR checklist with skill quality gate
+│
+├── .claude-plugin/              <- Claude Code/Cowork plugin manifest
+│   ├── plugin.json              <- Plugin metadata and triggers
+│   └── commands/                <- Slash commands
+│       ├── orchestrate.md       <- /orchestrate - Start or resume workflow
+│       ├── critique.md          <- /critique - Invoke Devil's Advocate
+│       ├── progress.md          <- /progress - Check workflow state
+│       └── validate.md          <- /validate - Validate all skills
 │
 ├── .commandcode/
 │   ├── taste/taste.md           <- Developer preferences (auto-managed by s02)
@@ -586,27 +419,35 @@ hybrid-harness-chaos-process-prm/
 │       ├── perf/*.json
 │       ├── experiment-*.yaml
 │       ├── resilience-*.json
-│       ├── research/            <- Deep research reports (produced by s32)
-│       ├── optimization/        <- System optimization reports (produced by s33)
+│       ├── research/
+│       ├── optimization/
+│       ├── critique/             <- Devil's Advocate reports (produced by s35)
 │       ├── dr/
 │       ├── compliance/
 │       └── releases/
 │
+├── scripts/
+│   └── pre-commit-validate.py   <- Pre-commit validation script
+│
+├── tests/
+│   ├── test_validate_skills.py  <- Unit tests for skill validation
+│   └── test_progress_tracker.py <- Unit tests for progress tracker
+│
 ├── tools/                       <- CLI tools for the skill framework
 │   ├── validate_skills.py       <- Validate all SKILL.md files
 │   ├── generate_docs.py         <- Auto-generate SKILLS-CATALOG.md
-│   ├── scaffold_skill.py        <- Create new skills from templates
-│   ├── shared/                  <- Shared utilities (constants, models, parsers)
-│   └── chaos_mcp_server/       <- MCP server for LitmusChaos + Harness Chaos
+│   ├── scaffold_skill.py         <- Create new skills from templates
+│   ├── progress_tracker.py       <- CLI for managing workflow state
+│   ├── shared/                   <- Shared utilities (constants, models, parsers)
+│   └── chaos_mcp_server/         <- MCP server for LitmusChaos + Harness Chaos
 │
-└── skills/                      <- 35 skills in Agile workflow order
+└── skills/                      <- 36 skills in Agile workflow order
     ├── AI-AGENT-MAPPING.md      <- Harness AI agent mapping + autonomy model
     ├── SKILLS-CATALOG.md        <- Auto-generated skill catalog
     ├── s00-orchestrator/SKILL.md
-    ├── ...                      <- s01-s32
-    ├── s33-system-optimization/SKILL.md
-    └── s34-documentation-writing/SKILL.md
-```
+    ├── ...                      <- s01-s34
+    └── s35-devils-advocate/SKILL.md  <- 🆕 Adversarial critique
+``
 
 ---
 
@@ -616,10 +457,10 @@ All skills respect these environment boundaries:
 
 | Tier | Chaos Allowed | Blast Radius | Approval Required |
 |---|---|---|---|
-| `dev` | Yes | Pod-level only | None |
-| `staging` | Yes | Service-level | Team lead |
-| `preprod` | Yes, gated | Namespace-level | SRE + PM |
-| `production` | Yes, with guard rails | Node-level max | SRE + CTO |
+| dev | Yes | Pod-level only | None |
+| staging | Yes | Service-level | Team lead |
+| preprod | Yes, gated | Namespace-level | SRE + PM |
+| production | Yes, with guard rails | Node-level max | SRE + CTO |
 
 ---
 
@@ -633,23 +474,39 @@ Contributions that extend, refine, or improve the skill library are welcome.
 - Corrections to incorrect or outdated guidance
 - Additional compliance framework mappings (s30)
 - New innovation patterns for the strategic creator (s31)
+- New critique perspectives or fallacy types for the Devil's Advocate (s35)
+- Bug fixes for tools or validation
 
 ### Skill quality standards
 Every SKILL.md must include:
-- YAML frontmatter with `name` and `description`
+- YAML frontmatter with 
+ame and description
 - Input Contract table
 - Output Contract table
 - Prerequisites checklist
 - Step-by-step workflow
 - Runnable examples (YAML, scripts, configs)
+- AI Agent Integration section (Autonomy Level, Agent, Human Gates)
 - Success Criteria checklist
 
-### Pull request process
+### Development workflow
 1. Fork the repository
-2. Create a branch: `git checkout -b feature/skill-description`
-3. Write or modify skills following the quality standards
-4. Commit with descriptive messages
-5. Open a pull request against `main`
+2. Create a branch: git checkout -b feature/skill-description
+3. Install pre-commit hooks: pip install pre-commit && pre-commit install
+4. Write or modify skills following the quality standards
+5. Validate: python tools/validate_skills.py
+6. Generate docs: python tools/generate_docs.py
+7. Run tests: pytest tests/ -v
+8. Commit with descriptive messages
+9. Open a pull request against main (use the PR template)
+
+### Pull request process
+All PRs are validated by GitHub Actions CI which runs:
+- Skill validation (frontmatter, sections, autonomy levels, cross-references)
+- Python linting (ruff)
+- YAML linting (yamllint)
+- Markdown linting (markdownlint-cli2)
+- Unit tests (pytest)
 
 ---
 
@@ -662,13 +519,13 @@ A: The CI/CD skills (s04-s10) are Harness-specific, but the workflow structure, 
 A: The orchestrator (s00) enforces phase ordering but allows skipping with explicit user confirmation. Security (s11) and testing (s12-s13) gates are hard blocks — they cannot be skipped for production-bound artifacts.
 
 **Q: What happens if I switch between Claude Code, Codex, and GPT-4?**
-A: Progress is stored in `.commandcode/progress.json`. Taste is stored in `.commandcode/taste/taste.md`. Any agent that loads the CLAUDE.md context will pick up exactly where the previous agent left off.
+A: Progress is stored in .commandcode/progress.json. Taste is stored in .commandcode/taste/taste.md. Any agent that loads the CLAUDE.md context will pick up exactly where the previous agent left off.
 
-**Q: Is the strategic creator (s31) mandatory?**
-A: No. s31 is entirely optional and advisory. It never implements anything — it only proposes. The user always makes the final call on whether to accept, defer, or decline proposals.
+**Q: How does the Devil's Advocate (s35) work?**
+A: s35 is callable at any phase. It provides 4 intensity levels of critique (Skeptic, Critic, Prosecutor, Demolisher), detects 14+ logical fallacies, scores arguments on 5 dimensions, and produces a PASS/CONDITIONAL/FAIL verdict. It can optionally integrate with the [Devil's Advocate Agent](https://github.com/dungnotnull/devils-advocate-agent) for ML-powered fallacy detection and RAG-grounded counter-arguments.
 
-**Q: How do I add a new compliance framework?**
-A: Edit s30-compliance-audit/SKILL.md. Add your framework to the `supported_frameworks` YAML block, map your controls in `control_mapping`, and the auto-generated audit trail will include your framework's evidence.
+**Q: How do I track my workflow progress?**
+A: Use the progress-tracker CLI: progress-tracker init to start, progress-tracker status to view, progress-tracker transition <phase> <status> to advance, progress-tracker handoff to generate agent handoff summaries.
 
 ---
 
@@ -684,6 +541,8 @@ Built on years of platform engineering and chaos engineering practice. Inspired 
 - The [Harness](https://harness.io) platform's CI/CD, FF, GitOps, CCM, and Chaos modules
 - [LitmusChaos](https://litmuschaos.io) for the chaos experiment DSL
 - [CloakBrowser](https://github.com/CloakHQ/CloakBrowser) for advanced browser automation
+- [Anthropic's Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins) for the plugin architecture pattern
+- [Devil's Advocate Agent](https://github.com/dungnotnull/devils-advocate-agent) for the adversarial critique mechanism
 - Netflix's Chaos Engineering philosophy
 - Google's SRE workbook
 - The Open Policy Agent community

@@ -1,6 +1,6 @@
-import os
+﻿import os
 import re
-from typing import Optional
+from typing import Optional, Tuple
 
 from tools.shared.constants import SKILLS_DIR, SKILL_FILE, SKILL_PHASE_MAP, PHASE_MAP
 from tools.shared.frontmatter import parse_frontmatter, validate_frontmatter
@@ -17,9 +17,13 @@ from tools.shared.sections import (
 from tools.shared.models import SkillMeta, SkillFrontmatter, AgentIntegration
 
 
-def discover_skills(skills_dir: str) -> list[tuple[int, str, str]]:
-    """Scan skills/ directory for all skill folders matching sNN-* pattern.
+def discover_skills(skills_dir: str) -> list[Tuple[float, str, str]]:
+    """Scan skills/ directory for all skill folders matching sNN-* or sNN-M-* pattern.
     Returns list of (skill_number, dir_name, skill_md_path).
+    
+    skill_number uses float for sub-skills: s01-1 -> 1.5, s14 -> 14.0
+    This ensures sub-skills don't collide with parent skills and sort correctly.
+    The .5 convention means "this is a sub-skill of the preceding number".
     """
     skills = []
     if not os.path.isdir(skills_dir):
@@ -29,8 +33,24 @@ def discover_skills(skills_dir: str) -> list[tuple[int, str, str]]:
         entry_path = os.path.join(skills_dir, entry)
         if not os.path.isdir(entry_path):
             continue
-        skill_num = parse_skill_number(entry)
-        if skill_num is not None:
+        
+        # Match sub-numbered skills like s01-1-user-flow-writing
+        match_sub = re.match(r'^s(\d+)-(\d+)-(.+)$', entry)
+        if match_sub:
+            major = int(match_sub.group(1))
+            minor = int(match_sub.group(2))
+            # Use .5 convention for sub-skills (e.g., s01-1 -> 1.5)
+            # This ensures they sort after the parent skill but before the next skill
+            skill_num = major + 0.5
+            skill_md = os.path.join(entry_path, SKILL_FILE)
+            if os.path.isfile(skill_md):
+                skills.append((skill_num, entry, skill_md))
+            continue
+        
+        # Match standard skills like s14-experiment-design
+        match = re.match(r'^s(\d+)-', entry)
+        if match:
+            skill_num = int(match.group(1))
             skill_md = os.path.join(entry_path, SKILL_FILE)
             if os.path.isfile(skill_md):
                 skills.append((skill_num, entry, skill_md))
@@ -38,15 +58,7 @@ def discover_skills(skills_dir: str) -> list[tuple[int, str, str]]:
     return skills
 
 
-def parse_skill_number(dir_name: str) -> Optional[int]:
-    """Extract skill number from directory name like 's14-experiment-design'."""
-    match = re.match(r'^s(\d+)-', dir_name)
-    if match:
-        return int(match.group(1))
-    return None
-
-
-def parse_skill(file_path: str, skill_number: int, dir_name: str) -> Optional[SkillMeta]:
+def parse_skill(file_path: str, skill_number: float, dir_name: str) -> Optional[SkillMeta]:
     """Parse a single SKILL.md file into a SkillMeta object."""
     try:
         with open(file_path, "r", encoding="utf-8") as f:
@@ -90,14 +102,20 @@ def parse_skill(file_path: str, skill_number: int, dir_name: str) -> Optional[Sk
                 elif key == "Notes":
                     agent_integration.notes = content_sub[:200]
 
-    phase = SKILL_PHASE_MAP.get(skill_number, -1)
+    # Look up phase using integer part of skill number
+    int_number = int(skill_number)
+    phase = SKILL_PHASE_MAP.get(int_number, -1)
     phase_name = PHASE_MAP.get(phase, "Any") if phase >= 0 else "Any"
 
     input_contract = sections.get("Input Contract", "")
     cross_refs = extract_cross_references(input_contract)
 
+    # For display: sub-skills (1.5) use the original dir_name pattern
+    # but the number field uses int for compatibility
+    display_number = int(skill_number) if skill_number == int(skill_number) else int(skill_number)
+
     return SkillMeta(
-        number=skill_number,
+        number=display_number,
         dir_name=dir_name,
         file_path=file_path,
         frontmatter=SkillFrontmatter(
@@ -124,7 +142,12 @@ def load_all_skills(project_root: str) -> list[SkillMeta]:
             skills.append(skill)
 
     # Build cross_refs_out by inverting cross_refs_in
-    skill_map = {f"s{s.number:02d}": s for s in skills}
+    # Use both sNN format and dir_name for lookup
+    skill_map = {}
+    for s in skills:
+        skill_map[f"s{s.number:02d}"] = s
+        skill_map[s.dir_name] = s
+    
     for skill in skills:
         for ref in skill.cross_refs_in:
             if ref in skill_map:
@@ -132,4 +155,4 @@ def load_all_skills(project_root: str) -> list[SkillMeta]:
                 if skill.dir_name not in referenced.cross_refs_out:
                     referenced.cross_refs_out.append(skill.dir_name)
 
-    return sorted(skills, key=lambda s: s.number)
+    return sorted(skills, key=lambda s: (s.number, s.dir_name))

@@ -1,4 +1,4 @@
----
+﻿---
 name: workflow-orchestrator
 description: >
   Master orchestration skill that coordinates the complete end-to-end Agile workflow
@@ -50,59 +50,59 @@ Serve as the single entrypoint that coordinates the entire hybrid harness + chao
 
 ```
 PHASE 0: FOUNDATION
-  s00 → s01 → s02 + s03 (parallel)
-    │
+  s00 â†’ s01 â†’ s02 + s03 (parallel)
+    â”‚
 PHASE 1: PLANNING & REQUIREMENTS
-  s01 (BA deep analysis → PRD + ADRs + backlog)
-    │
+  s01 (BA deep analysis â†’ PRD + ADRs + backlog)
+    â”‚
 PHASE 2: CI/CD SCAFFOLDING
-  s04 → s05 → s06 → s07 → s08 → s09 → s10
-  (pipeline design → service onboard → delegate → secrets → FF → templates → GitOps)
-    │
+  s04 â†’ s05 â†’ s06 â†’ s07 â†’ s08 â†’ s09 â†’ s10
+  (pipeline design â†’ service onboard â†’ delegate â†’ secrets â†’ FF â†’ templates â†’ GitOps)
+    â”‚
 PHASE 3: SECURITY GATE
   s11 (SAST + SCA + container + secrets + IaC + SBOM + SLSA)
-  ⚠️ BLOCKS all downstream if security gates fail
-    │
+  â ï¸ BLOCKS all downstream if security gates fail
+    â”‚
 PHASE 4: TESTING
-  s12 → s13 (CloakBrowser E2E + baseline → Performance/load profiling)
-  ⚠️ Performance baseline required before chaos experiments
-    │
+  s12 â†’ s13 (CloakBrowser E2E + baseline â†’ Performance/load profiling)
+  â ï¸ Performance baseline required before chaos experiments
+    â”‚
 PHASE 5: CHAOS EXPERIMENT DESIGN
-  s14 → s15 → s16 → s17 → s18 → s19
-  (experiment → hypothesis → blast radius → steady state → infra faults → app faults)
-    │
+  s17 â†’ s14 â†’ s15 â†’ s16 â†’ s18 â†’ s19
+  \(steady state â†’ experiment â†’ hypothesis â†’ blast radius â†’ infra faults â†’ app faults\)
+    â”‚
 PHASE 6: GAME DAY EXECUTION
   s20 (orchestrated resilience exercise)
-    │
+    â”‚
 PHASE 7: VERIFICATION & OBSERVABILITY
-  s21 → s22 → s23
-  (CV verification → observability integration → alerting & recommendations)
-    │
+  s21 â†’ s22 â†’ s23
+  (CV verification â†’ observability integration â†’ alerting & recommendations)
+    â”‚
 PHASE 8: GOVERNANCE
-  s24 → s25 → s26 → s27 → s28
-  (policy → cost → resilience scoring → postmortem → release management)
-    │
+  s24 â†’ s25 â†’ s26 â†’ s27 â†’ s28
+  (policy â†’ cost â†’ resilience scoring â†’ postmortem â†’ release management)
+    â”‚
 PHASE 9: RESILIENCE & CONTINUITY
-  s29 → s30
-  (disaster recovery → compliance & audit)
+  s29 â†’ s30
+  (disaster recovery â†’ compliance & audit)
 
-STRATEGIC INNOVATION (s31 — callable at ANY phase)
+STRATEGIC INNOVATION (s31 â€” callable at ANY phase)
   Invoked when user says "think bigger", "brainstorm", "what am I missing",
   "upgrade requirements", "strategic review", "innovate"
-  → s31 produces proposals + trade-off analysis (advisory only)
-  → If user accepts a proposal, dispatches to relevant implementation skill
-  → If user declines, workflow continues from current phase unchanged
+  â†’ s31 produces proposals + trade-off analysis (advisory only)
+  â†’ If user accepts a proposal, dispatches to relevant implementation skill
+  â†’ If user declines, workflow continues from current phase unchanged
 
 FEEDBACK LOOP:
-  s27 (postmortem findings) → s01 (re-analysis) → full cycle
-  s30 (compliance gaps) → s01 (PRD update) → remediation cycle
+  s27 (postmortem findings) â†’ s01 (re-analysis) â†’ full cycle
+  s30 (compliance gaps) â†’ s01 (PRD update) â†’ remediation cycle
 ```
 
 ## Phase 0: Foundation
 
 When the user initiates any workflow, execute these steps in order:
 
-### Step 1 — Load Project Context
+### Step 1 â€” Load Project Context
 ```yaml
 action: read_and_load
 files:
@@ -112,13 +112,13 @@ status: check_progress_file
   - .commandcode/progress.json   # Where are we in the workflow?
 ```
 
-### Step 2 — Determine Phase
+### Step 2 â€” Determine Phase
 Based on user request and progress state, determine current phase:
-- **No progress file exists** → Start at s01 (BA Requirements) or s04 (CI/CD if project exists)
-- **Progress file exists** → Resume from last completed phase
-- **User specifies phase** → Jump to that phase (but warn about skipped prerequisites)
+- **No progress file exists** â†’ Start at s01 (BA Requirements) or s04 (CI/CD if project exists)
+- **Progress file exists** â†’ Resume from last completed phase
+- **User specifies phase** â†’ Jump to that phase (but warn about skipped prerequisites)
 
-### Step 3 — Dispatch and Hand-off
+### Step 3 â€” Dispatch and Hand-off
 ```yaml
 handoff_protocol:
   before_dispatch:
@@ -173,9 +173,6 @@ handoff_protocol:
 | 29 | Disaster Recovery | Topology, resilience scores | DR plan, failover runbook, RTO/RPO | s26, s30 |
 | 30 | Compliance & Audit | All evidence, scans, approvals | Audit trail, evidence bundle | s01 (feedback loop) |
 | 31 | Strategic Creator | Current phase artifacts, PRD, taste | Proposals + trade-off analysis (advisory) | s01, s04, s11, s14, s22, s25, s30 (on acceptance) |
-| 07 | Secrets Management | Service defs (s05) | Secret references | s04, s05, s08 |
-| 29 | Disaster Recovery | Topology, resilience scores | DR plan, failover runbook, RTO/RPO | s26, s30 |
-| 30 | Compliance & Audit | All evidence, scans, approvals | Audit trail, evidence bundle | s01 (feedback loop) |
 
 ---
 
@@ -265,7 +262,7 @@ s31_invocation:
   behavior:
     - Pause current workflow phase (do NOT advance progress.json)
     - Load s31 with current phase context + PRD + taste
-    - Present proposals (advisory only — no implementation)
+    - Present proposals (advisory only â€” no implementation)
     - Wait for user decision:
         accept: dispatch to relevant skills, update progress.json
         decline: resume current phase from where we paused
@@ -273,13 +270,13 @@ s31_invocation:
 
   example_flow:
     current_phase: "05-service-onboarding (in_progress)"
-    user: "Think bigger — what would Netflix do here?"
-    →
+    user: "Think bigger â€” what would Netflix do here?"
+    â†’
     s31_invoked:
       - Pauses s05
       - Analyzes current architecture + PRD
       - Presents 3 proposals with trade-offs
-      - User accepts Proposal #2 → dispatches s01 (new ADR) + s05 (service update)
+      - User accepts Proposal #2 â†’ dispatches s01 (new ADR) + s05 (service update)
       - After dispatch, resumes s05 with updated context
 ```
 
@@ -321,7 +318,7 @@ When operating as the orchestrator:
 
 1. **Never skip phases** unless user explicitly confirms skipping
 2. **Always verify upstream outputs** before passing them downstream
-3. **Surface blockers immediately** — don't silently continue without prerequisites
+3. **Surface blockers immediately** â€” don't silently continue without prerequisites
 4. **Update progress.json after every phase completion**
 5. **Inject taste data** from s02 into every skill context
 6. **Present phase summaries** with: what was done, what was produced, what comes next
@@ -332,39 +329,39 @@ When operating as the orchestrator:
 
 ```
 User prompt received
-    │
-    ├── "Start new project" or "Design/plan X"
-    │   └── GOTO s01 (BA Requirements) → full workflow
-    │
-    ├── "Set up CI/CD" or "Deploy X"
-    │   ├── Is PRD/context available?
-    │   │   ├── YES → GOTO s04 (Pipeline Design)
-    │   │   └── NO → GOTO s01 first, then s04
-    │
-    ├── "Run chaos experiment" or "Test resilience"
-    │   ├── Is pipeline + service onboarded?
-    │   │   ├── YES → GOTO s14 (Experiment Design)
-    │   │   └── NO → GOTO s04 first, then s14
-    │
-    ├── "Game day" or "Chaos day"
-    │   ├── Are experiments designed and validated?
-    │   │   ├── YES → GOTO s20 (Game Day Planning)
-    │   │   └── NO → GOTO s14 first, then s20
-    │
-    ├── "Think bigger" / "Brainstorm" / "What am I missing" / "Innovate"
-    │   └── GOTO s31 (Strategic Creator) — pause current phase, present proposals
-    │       ├── User accepts proposal → dispatch to relevant skill(s)
-    │       ├── User declines → resume paused phase
-    │       └── User defers → record in context, resume paused phase
-    │
-    ├── "Review/audit" or "Governance check"
-    │   └── GOTO s24 (Policy Governance) → s26 (Scoring) → s27 (Postmortem)
-    │
-    ├── "Security audit" or "Vulnerability check"
-    │   └── GOTO s11 (Security Scanning) → s30 (Compliance Audit)
-    │
-    └── "Fix issue from postmortem" or "Remediate"
-        └── GOTO s27 (Postmortem) → feeds back into s01 (re-analysis)
+    â”‚
+    â”œâ”€â”€ "Start new project" or "Design/plan X"
+    â”‚   â””â”€â”€ GOTO s01 (BA Requirements) â†’ full workflow
+    â”‚
+    â”œâ”€â”€ "Set up CI/CD" or "Deploy X"
+    â”‚   â”œâ”€â”€ Is PRD/context available?
+    â”‚   â”‚   â”œâ”€â”€ YES â†’ GOTO s04 (Pipeline Design)
+    â”‚   â”‚   â””â”€â”€ NO â†’ GOTO s01 first, then s04
+    â”‚
+    â”œâ”€â”€ "Run chaos experiment" or "Test resilience"
+    â”‚   â”œâ”€â”€ Is pipeline + service onboarded?
+    â”‚   â”‚   â”œâ”€â”€ YES â†’ GOTO s14 (Experiment Design)
+    â”‚   â”‚   â””â”€â”€ NO â†’ GOTO s04 first, then s14
+    â”‚
+    â”œâ”€â”€ "Game day" or "Chaos day"
+    â”‚   â”œâ”€â”€ Are experiments designed and validated?
+    â”‚   â”‚   â”œâ”€â”€ YES â†’ GOTO s20 (Game Day Planning)
+    â”‚   â”‚   â””â”€â”€ NO â†’ GOTO s14 first, then s20
+    â”‚
+    â”œâ”€â”€ "Think bigger" / "Brainstorm" / "What am I missing" / "Innovate"
+    â”‚   â””â”€â”€ GOTO s31 (Strategic Creator) â€” pause current phase, present proposals
+    â”‚       â”œâ”€â”€ User accepts proposal â†’ dispatch to relevant skill(s)
+    â”‚       â”œâ”€â”€ User declines â†’ resume paused phase
+    â”‚       â””â”€â”€ User defers â†’ record in context, resume paused phase
+    â”‚
+    â”œâ”€â”€ "Review/audit" or "Governance check"
+    â”‚   â””â”€â”€ GOTO s24 (Policy Governance) â†’ s26 (Scoring) â†’ s27 (Postmortem)
+    â”‚
+    â”œâ”€â”€ "Security audit" or "Vulnerability check"
+    â”‚   â””â”€â”€ GOTO s11 (Security Scanning) â†’ s30 (Compliance Audit)
+    â”‚
+    â””â”€â”€ "Fix issue from postmortem" or "Remediate"
+        â””â”€â”€ GOTO s27 (Postmortem) â†’ feeds back into s01 (re-analysis)
 ```
 
 ---
