@@ -1,4 +1,4 @@
-﻿"""Tests for the skill validator."""
+"""Tests for the skill validator."""
 import os
 import sys
 import tempfile
@@ -24,24 +24,22 @@ class TestFrontmatter:
     """Test YAML frontmatter parsing and validation."""
 
     def test_parse_valid_frontmatter(self):
-        content = """"\"
----
+        content = """---
 name: test-skill
 description: A test skill
 ---
 # Test Skill
-""""
+"""
         fm_data, body = parse_frontmatter(content)
         assert fm_data["name"] == "test-skill"
         assert fm_data["description"] == "A test skill"
         assert "# Test Skill" in body
 
     def test_parse_frontmatter_missing_closing(self):
-        content = """"\"
----
+        content = """---
 name: test-skill
 description: A test skill
-""""
+"""
         with pytest.raises(ValueError):
             parse_frontmatter(content)
 
@@ -66,8 +64,7 @@ class TestSections:
     """Test section extraction."""
 
     def test_extract_sections(self):
-        body = """"\"
-## Purpose
+        body = """## Purpose
 Some purpose text.
 
 ## Input Contract
@@ -75,7 +72,7 @@ Some input text.
 
 ## Success Criteria
 Some criteria text.
-""""
+"""
         sections = extract_sections(body)
         assert "Purpose" in sections
         assert "Input Contract" in sections
@@ -83,8 +80,7 @@ Some criteria text.
         assert "Some purpose text." in sections["Purpose"]
 
     def test_extract_subsections(self):
-        content = """"\"
-### Autonomy Level
+        content = """### Autonomy Level
 Some autonomy text.
 
 ### Harness AI Agent
@@ -92,19 +88,18 @@ Some agent text.
 
 ### Human Gates
 Some gates text.
-""""
+"""
         subsections = extract_subsections(content)
         assert "Autonomy Level" in subsections
         assert "Harness AI Agent" in subsections
         assert "Human Gates" in subsections
 
     def test_extract_autonomy_levels(self):
-        content = """"\"
-| Aspect | Level | Description |
+        content = """| Aspect | Level | Description |
 |---|---|---|
 | Current | L1 | AI suggests, human decides |
 | Target | L3 | AI executes, human reviews |
-""""
+"""
         autonomy = extract_autonomy_levels(content)
         assert autonomy is not None
         assert autonomy.current == "L1"
@@ -116,6 +111,17 @@ class TestCrossReferences:
 
     def test_valid_crossrefs(self):
         skills = [
+            SkillMeta(
+                number=0,
+                dir_name="s00-orchestrator",
+                file_path="skills/s00-orchestrator/SKILL.md",
+                frontmatter=SkillFrontmatter(name="orchestrator", description="test"),
+                sections={},
+                agent_integration=AgentIntegration(),
+                phase=0,
+                phase_name="Foundation",
+                cross_refs_in=[],
+            ),
             SkillMeta(
                 number=1,
                 dir_name="s01-ba-requirements",

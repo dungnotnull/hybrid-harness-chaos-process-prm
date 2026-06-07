@@ -17,6 +17,11 @@ Maintain a single source of truth for workflow progress across all phases and ag
 
 ---
 
+## Prerequisites
+- [ ] Orchestrator (s00) has been loaded for context
+- [ ] .commandcode/ directory exists for state persistence
+- [ ] No specific skill outputs required — this skill initializes state
+
 ## Input Contract
 
 | Input | Source | Required |

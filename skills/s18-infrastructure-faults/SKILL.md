@@ -16,6 +16,14 @@ Produce complete, safe, runnable infrastructure-level chaos experiments that tes
 
 ---
 
+## Prerequisites
+- [ ] Chaos experiment designs from s14 (Experiment Design)
+- [ ] Delegate configured from s06 (Delegate Management)
+- [ ] Kubernetes cluster access for infrastructure operations
+- [ ] Steady state defined from s17 (Steady State)
+- [ ] Blast radius approved from s16 (Blast Radius Control)
+- [ ] Observability active and monitoring targets
+
 ## Input Contract
 
 | Input | Source | Required |

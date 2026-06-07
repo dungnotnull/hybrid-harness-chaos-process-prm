@@ -16,6 +16,13 @@ Guarantee that chaos experiments affect only the intended targets, at the intend
 
 ---
 
+## Prerequisites
+- [ ] Chaos experiment designs from s14 (Experiment Design)
+- [ ] Environment tier permissions reviewed (see CLAUDE.md env tiers)
+- [ ] Feature flag chaos gate config from s08 (recommended)
+- [ ] Risk tolerance preferences from s02 (Taste Memory)
+- [ ] Service criticality ratings from s01 (PRD)
+
 ## Input Contract
 
 | Input | Source | Required |

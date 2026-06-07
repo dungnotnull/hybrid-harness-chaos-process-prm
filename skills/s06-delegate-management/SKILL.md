@@ -16,6 +16,12 @@ Install, configure, and maintain Harness Delegates — the on-premise agents tha
 
 ---
 
+## Prerequisites
+- [ ] Service definitions from s05 (Service Onboarding)
+- [ ] Kubernetes cluster access and kubeconfig configured
+- [ ] Harness account with delegate management permissions
+- [ ] Network connectivity between delegate and Harness platform
+
 ## Input Contract
 
 | Input | Source | Required |

@@ -11,6 +11,18 @@ from tools.shared.skill_discovery import load_all_skills
 from tools.shared.constants import HARNESS_AGENTS
 
 
+def fmt_skill_num(number: float) -> str:
+    if number == int(number):
+        return f"{int(number):02d}"
+    else:
+        major = int(number)
+        # Convention: .5 sub-skill minor = 1, .6 = 2, etc.
+        # This matches the directory naming: s01-1 -> 1.5, s01-2 -> 1.6
+        minor = int(round((number % 1) * 10) - 4)
+        return f"{major:02d}-{minor}"
+
+
+
 def generate_skill_table(skills: list[SkillMeta]) -> str:
     """Generate the markdown skill catalog table."""
     lines = [
@@ -23,7 +35,7 @@ def generate_skill_table(skills: list[SkillMeta]) -> str:
         if agent.autonomy_level:
             autonomy = f"{agent.autonomy_level.current}/{agent.autonomy_level.target}"
         ai_agent = agent.harness_ai_agent or "None"
-        lines.append(f"| s{skill.number:02d} | {skill.frontmatter.name} | {skill.phase_name} | {autonomy} | {ai_agent} |")
+        lines.append(f"| {fmt_skill_num(skill.number)} | {skill.frontmatter.name} | {skill.phase_name} | {autonomy} | {ai_agent} |")
     return "\n".join(lines)
 
 
@@ -37,7 +49,7 @@ def generate_agent_coverage_matrix(skills: list[SkillMeta]) -> str:
         autonomy = "N/A"
         if skill.agent_integration.autonomy_level:
             autonomy = f"{skill.agent_integration.autonomy_level.current}/{skill.agent_integration.autonomy_level.target}"
-        agent_skills[agent].append(f"s{skill.number:02d} ({autonomy})")
+        agent_skills[agent].append(f"{fmt_skill_num(skill.number)} ({autonomy})")
 
     lines = ["| AI Agent | Skills Covered |", "|---|---|"]
     for agent in sorted(agent_skills.keys()):
@@ -54,7 +66,7 @@ def generate_mcp_matrix(skills: list[SkillMeta]) -> str:
         for platform in skill.agent_integration.mcp_platforms:
             if platform not in platform_skills:
                 platform_skills[platform] = []
-            platform_skills[platform].append(f"s{skill.number:02d}")
+            platform_skills[platform].append(f"{fmt_skill_num(skill.number)}")
 
     if not platform_skills:
         return "No MCP integrations found."
@@ -88,7 +100,7 @@ def generate_autonomy_distribution(skills: list[SkillMeta]) -> str:
             c = skill.agent_integration.autonomy_level.current
             if c not in current_skills:
                 current_skills[c] = []
-            current_skills[c].append(f"s{skill.number:02d}")
+            current_skills[c].append(f"{fmt_skill_num(skill.number)}")
 
     for level in ["L0", "L1", "L2", "L3", "L4"]:
         count = current_counts.get(level, 0)
@@ -108,7 +120,7 @@ def generate_autonomy_distribution(skills: list[SkillMeta]) -> str:
             t = skill.agent_integration.autonomy_level.target
             if t not in target_skills:
                 target_skills[t] = []
-            target_skills[t].append(f"s{skill.number:02d}")
+            target_skills[t].append(f"{fmt_skill_num(skill.number)}")
 
     for level in ["L0", "L1", "L2", "L3", "L4"]:
         count = target_counts.get(level, 0)
@@ -125,7 +137,7 @@ def generate_cross_reference_map(skills: list[SkillMeta]) -> str:
     for skill in skills:
         refs_in = ", ".join(skill.cross_refs_in) if skill.cross_refs_in else "None"
         refs_out = ", ".join(skill.cross_refs_out) if skill.cross_refs_out else "None"
-        lines.append(f"| s{skill.number:02d} {skill.frontmatter.name} | {refs_in} | {refs_out} |")
+        lines.append(f"| {fmt_skill_num(skill.number)} {skill.frontmatter.name} | {refs_in} | {refs_out} |")
     return "\n".join(lines)
 
 
@@ -134,7 +146,7 @@ def generate_catalog(skills: list[SkillMeta]) -> str:
     lines = [
         "# Skills Catalog",
         "",
-        f"**Generated from**: 33 SKILL.md files",
+        f"**Generated from**: 37 SKILL.md files",
         f"**Total skills**: {len(skills)}",
         "",
         "---",

@@ -17,6 +17,12 @@ Act as a Strategic Business Analyst using the **BMAD methodology** to align busi
 
 ---
 
+## Prerequisites
+- [ ] Project description or user request available
+- [ ] Stakeholder availability for interview/requirements gathering
+- [ ] Access to existing documentation (if any)
+- [ ] .commandcode/ directory initialized for artifact storage
+
 ## Input Contract
 
 | Input | Source | Required |
@@ -44,7 +50,7 @@ Act as a Strategic Business Analyst using the **BMAD methodology** to align busi
 ## BMAD Analysis Framework
 
 ```
-BUSINESS MODEL (B) → ARCHITECTURE (A) → DESIGN (D) → ANALYSIS/AUDIT (A)
+BUSINESS MODEL (B) â†’ ARCHITECTURE (A) â†’ DESIGN (D) â†’ ANALYSIS/AUDIT (A)
 
 B: Align with value chain, OKRs, and economic impact.
 A: Map business goals to technical components and trade-offs.
@@ -140,7 +146,7 @@ Perform a **BMAD Cross-Audit** and document it in the PRD:
 
 ### PRD Template (BMAD Edition)
 ```markdown
-# Product Requirements Document — <PROJECT_NAME>
+# Product Requirements Document â€” <PROJECT_NAME>
 
 ## 1. Business Model (The 'B')
 - **Value Proposition**: The economic/operational "Why".
@@ -202,8 +208,28 @@ ba_output:
 ---
 
 ## AI Agent Integration
-**Agent**: Harness AI DevOps Agent (Claude Opus 4.5)
-**Autonomy**: L2 (AI drafts the full BMAD chain, Human audits and signs off).
+
+### Autonomy Level
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L2 | AI drafts the full BMAD chain, Human audits and signs off |
+| Target | L3 | AI runs complete BMAD analysis autonomously, human approves final PRD |
+
+### Harness AI Agent
+**Agent**: Harness AI DevOps Agent
+
+**Capabilities**:
+- Full BMAD methodology execution (Business Model -> Architecture -> Design -> Analysis/Audit)
+- Requirements gathering and stakeholder analysis
+- ADR generation with business driver linkage
+- PRD generation with vertical alignment audit
+- Risk register creation and gap analysis
+
+### Human Gates
+- Final PRD approval and sign-off required before handoff to s01-1
+- Architecture Decision Records require human review for business alignment
+- Stakeholder validation required for Business Model (B) phase
+- Backlog prioritization requires product owner confirmation
 
 ## Success Criteria
 - [ ] Business Model (B) explicitly defines the "Value Exchange".

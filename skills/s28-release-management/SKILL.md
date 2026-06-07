@@ -17,6 +17,14 @@ Orchestrate production releases with rigorous change management — ensuring eve
 
 ---
 
+## Prerequisites
+- [ ] Pipeline YAML from s04
+- [ ] Feature flags from s08 configured with kill switches
+- [ ] Security scan from s11 passed (no HIGH/CRITICAL findings)
+- [ ] Performance results from s13
+- [ ] Resilience score from s26 (minimum 80 for production)
+- [ ] Observability from s22 active and monitoring
+
 ## Input Contract
 
 | Input | Source | Required |

@@ -112,7 +112,7 @@ def parse_skill(file_path: str, skill_number: float, dir_name: str) -> Optional[
 
     # For display: sub-skills (1.5) use the original dir_name pattern
     # but the number field uses int for compatibility
-    display_number = int(skill_number) if skill_number == int(skill_number) else int(skill_number)
+    display_number = skill_number  # Preserve float for sub-skills (e.g., 1.5 for s01-1)
 
     return SkillMeta(
         number=display_number,
@@ -145,7 +145,7 @@ def load_all_skills(project_root: str) -> list[SkillMeta]:
     # Use both sNN format and dir_name for lookup
     skill_map = {}
     for s in skills:
-        skill_map[f"s{s.number:02d}"] = s
+        skill_map[f"s{int(s.number):02d}"] = s
         skill_map[s.dir_name] = s
     
     for skill in skills:

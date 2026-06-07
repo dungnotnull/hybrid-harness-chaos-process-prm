@@ -17,6 +17,13 @@ Transform vague "what if X breaks?" questions into precise, falsifiable hypothes
 
 ---
 
+## Prerequisites
+- [ ] Chaos experiment designs from s14 (Experiment Design)
+- [ ] Steady state baselines from s17 (Steady State Definition)
+- [ ] Target service metrics identified
+- [ ] Observability stack active (Prometheus, Grafana)
+- [ ] Performance baselines from s13 (Performance Testing)
+
 ## Input Contract
 
 | Input | Source | Required |

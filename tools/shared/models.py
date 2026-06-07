@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+﻿from dataclasses import dataclass, field
 from typing import Optional
 
 
@@ -27,7 +27,7 @@ class SkillFrontmatter:
 
 @dataclass
 class SkillMeta:
-    number: int
+    number: float
     dir_name: str
     file_path: str
     frontmatter: SkillFrontmatter
@@ -42,7 +42,7 @@ class SkillMeta:
 @dataclass
 class ValidationError:
     file_path: str
-    skill_number: int
+    skill_number: float
     skill_name: str
     severity: str  # "error" or "warning"
     category: str  # "frontmatter", "section", "autonomy", "crossref", "formatting"

@@ -17,6 +17,13 @@ Establish quantitative performance baselines and validate system capacity before
 
 ---
 
+## Prerequisites
+- [ ] Service endpoints identified and accessible
+- [ ] SLAs and performance requirements defined (from s01 PRD)
+- [ ] k6 installed or available as container image
+- [ ] Target environment provisioned and stable
+- [ ] Baseline performance metrics from s12 (E2E testing) recommended
+
 ## Input Contract
 
 | Input | Source | Required |

@@ -16,6 +16,13 @@ Establish comprehensive observability for chaos experiments — ensuring every f
 
 ---
 
+## Prerequisites
+- [ ] Continuous verification config from s21 (CV Verification)
+- [ ] Chaos experiment results from s14-s19
+- [ ] Prometheus and Grafana deployed and accessible
+- [ ] Service metrics endpoints available
+- [ ] Dashboard creation permissions in Grafana
+
 ## Input Contract
 
 | Input | Source | Required |

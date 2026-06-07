@@ -19,6 +19,14 @@ Establish a zero-tolerance security gate across the entire delivery pipeline —
 
 ---
 
+## Prerequisites
+- [ ] Source code repository available for scanning
+- [ ] Container images built and pushed to a registry
+- [ ] Harness STO addon enabled in the pipeline
+- [ ] Security scanning tools configured (Semgrep, Trivy, Snyk/OWASP DC)
+- [ ] Gitleaks installed for secrets detection
+- [ ] Access to vulnerability database (internet or mirrored)
+
 ## Input Contract
 
 | Input | Source | Required |

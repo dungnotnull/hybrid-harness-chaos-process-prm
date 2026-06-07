@@ -35,3 +35,5 @@ venv/
 docs
 
 .git
+# One-time fix scripts
+scripts/fix_missing_sections.py

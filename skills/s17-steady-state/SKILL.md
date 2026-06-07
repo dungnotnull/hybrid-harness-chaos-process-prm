@@ -16,6 +16,13 @@ Establish a rigorous, measurable definition of "healthy" for every service befor
 
 ---
 
+## Prerequisites
+- [ ] Service definitions from s05 (Service Onboarding)
+- [ ] Pipeline YAML from s04 (Pipeline Design)
+- [ ] Prometheus or metrics endpoint accessible
+- [ ] Observability stack active and collecting metrics
+- [ ] Performance baselines from s13 (Performance Testing) recommended
+
 ## Input Contract
 
 | Input | Source | Required |

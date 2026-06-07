@@ -17,6 +17,13 @@ Move beyond component-level chaos into organization-level disaster resilience â€
 
 ---
 
+## Prerequisites
+- [ ] Service topology and architecture diagrams
+- [ ] Resilience scores from s26
+- [ ] Compliance audit trail from s30 (if available)
+- [ ] Cloud provider access for failover operations
+- [ ] Velero or equivalent backup solution configured
+
 ## Input Contract
 
 | Input | Source | Required |

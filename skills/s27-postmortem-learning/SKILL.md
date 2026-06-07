@@ -18,6 +18,13 @@ Transform chaos experiment findings into organizational learning — ensuring ev
 
 ---
 
+## Prerequisites
+- [ ] Game day results from s20 (if post-game-day)
+- [ ] Resilience scores from s26
+- [ ] Alert data from s23
+- [ ] Incident timeline and logs available
+- [ ] Team availability for blameless retrospective
+
 ## Input Contract
 
 | Input | Source | Required |

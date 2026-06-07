@@ -102,4 +102,4 @@ SKILLS_DIR = "skills"
 SKILL_FILE = "SKILL.md"
 
 # Total skill count (updated for v0.5.0)
-TOTAL_SKILLS = 36
+TOTAL_SKILLS = 37

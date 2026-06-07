@@ -1,4 +1,4 @@
-﻿# CLAUDE.md — hybrid-harness-chaos-process-prm (Pro Max)
+# CLAUDE.md — hybrid-harness-chaos-process-prm (Pro Max)
 
 ## Project Identity
 
@@ -12,7 +12,7 @@
 
 ## What This Project Does
 
-This repository defines a **36-skill Agile workflow** covering the complete SDLC from ideation to production operations, including adversarial critique:
+This repository defines a **37-skill Agile workflow** covering the complete SDLC from ideation to production operations, including adversarial critique:
 
 | Domain | Purpose |
 |---|---|
@@ -31,7 +31,7 @@ This repository defines a **36-skill Agile workflow** covering the complete SDLC
 
 ---
 
-## Quick Reference: Skill Index (36 Skills)
+## Quick Reference: Skill Index (37 Skills)
 
 | # | Skill | Phase | Triggers |
 |---|---|---|---|
@@ -354,7 +354,7 @@ FF_<TYPE>_<DOMAIN>_<FEATURE>
 
 ## AI Agent Architecture
 
-All 36 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem. See skills/AI-AGENT-MAPPING.md for the complete mapping.
+All 37 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem. See skills/AI-AGENT-MAPPING.md for the complete mapping.
 
 ### SRE Autonomy Levels (Google SRE Framework)
 

@@ -16,6 +16,13 @@ Produce complete, safe, runnable application-level chaos experiments that test s
 
 ---
 
+## Prerequisites
+- [ ] Chaos experiment designs from s14 (Experiment Design)
+- [ ] Target application deployed and accessible
+- [ ] Steady state defined from s17 (Steady State)
+- [ ] Blast radius approved from s16 (Blast Radius Control)
+- [ ] Observability active and monitoring application metrics
+
 ## Input Contract
 
 | Input | Source | Required |

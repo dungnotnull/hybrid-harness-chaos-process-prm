@@ -1,4 +1,4 @@
-﻿---
+---
 name: workflow-orchestrator
 description: >
   Master orchestration skill that coordinates the complete end-to-end Agile workflow

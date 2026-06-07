@@ -1,4 +1,27 @@
-﻿# Changelog
+# Changelog
+
+## [0.5.1] - 2026-06-07
+
+### Fixed
+- Fixed all 24 SKILL.md validation errors (missing Prerequisites, AI Agent Integration subsections)
+- Fixed s01-ba-requirements: restructured flat AI Agent Integration into proper ### subsections
+- Fixed s01-1-user-flow-writing: added missing ### Human Gates subsection
+- Fixed s33-system-optimization: renamed ### Harness AI Agent Coverage to ### Harness AI Agent
+- Fixed s00-orchestrator: removed UTF-8 BOM that prevented frontmatter parsing
+- Fixed s33-system-optimization: added **Agent** name for multi-agent Harness AI Agent
+- Fixed validator code: changed SkillMeta.number from int to float for sub-skill support (s01-1)
+- Fixed generate_docs.py: added fmt_skill_num() helper for proper sub-skill number formatting
+- Fixed cross-reference validator: added sub-skill ID support (s01-1)
+- Fixed pyproject.toml: corrected TOML format (doubled quotes), removed BOM
+- Fixed test_validate_skills.py: corrected corrupted triple-quoted strings
+- Fixed test_progress_tracker.py: updated from 36 to 37 skills
+- Updated TOTAL_SKILLS from 36 to 37
+- Removed redundant Phase 1 (Planning & Requirements) from README (s01 already in Phase 0)
+- Regenerated SKILLS-CATALOG.md with all 37 skills
+
+### Changed
+- Updated all references from 36 skills to 37 skills across README.md, CLAUDE.md, pyproject.toml, constants.py
+- Updated SKILLS-CATALOG.md with correct s01-1 display and all agent mappings
 
 All notable changes to this project will be documented in this file.
 

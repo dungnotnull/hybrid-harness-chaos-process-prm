@@ -16,6 +16,13 @@ Transform chaos experiment results into structured alerts and prioritized remedi
 
 ---
 
+## Prerequisites
+- [ ] Observability integration from s22 (dashboards and metrics)
+- [ ] Chaos experiment results for alert threshold calibration
+- [ ] Feature flag chaos gate config from s08 (optional)
+- [ ] Security scan results from s11 (for security-related alerts)
+- [ ] PagerDuty/Slack integration available for alert routing
+
 ## Input Contract
 
 | Input | Source | Required |

@@ -1,4 +1,4 @@
-from tools.shared.models import SkillMeta, ValidationError
+﻿from tools.shared.models import SkillMeta, ValidationError
 
 
 def build_cross_reference_map(skills: list[SkillMeta]) -> dict[str, list[str]]:
@@ -8,7 +8,7 @@ def build_cross_reference_map(skills: list[SkillMeta]) -> dict[str, list[str]]:
 
 def validate_cross_references(skills: list[SkillMeta]) -> list[ValidationError]:
     """Check that all cross-references point to existing skills."""
-    existing = {f"s{skill.number:02d}" for skill in skills}
+    existing = set(); [existing.add(f"s{int(skill.number):02d}") or existing.add(f"s{int(skill.number):02d}-{int(round((skill.number % 1) * 10))}") if skill.number % 1 != 0 else existing.add(f"s{int(skill.number):02d}") for skill in skills]
     errors = []
 
     for skill in skills:

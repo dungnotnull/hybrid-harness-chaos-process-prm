@@ -18,6 +18,11 @@ Build and maintain a persistent model of the developer's preferences across all 
 
 ---
 
+## Prerequisites
+- [ ] At least one skill execution completed (taste is learned from interaction)
+- [ ] .commandcode/taste/ directory exists (created automatically if absent)
+- [ ] No prerequisites required for first-time initialization
+
 ## Input Contract
 
 | Input | Source | Required |

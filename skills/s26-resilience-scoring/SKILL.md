@@ -16,6 +16,14 @@ Provide a quantitative, repeatable framework for measuring system resilience —
 
 ---
 
+## Prerequisites
+- [ ] Security scan results from s11
+- [ ] Test results from s12 (E2E testing)
+- [ ] Chaos experiment results from s14-s19
+- [ | Observability data from s22
+- [ ] Policy governance from s24
+- [ ] Alert recommendations from s23
+
 ## Input Contract
 
 | Input | Source | Required |

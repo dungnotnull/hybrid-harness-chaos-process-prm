@@ -24,6 +24,12 @@ This skill writes NOTHING to artifacts. It only produces recommendations in conv
 
 ---
 
+## Prerequisites
+- [ ] Current phase artifacts and context available
+- [ ] PRD from s01 (BA Requirements)
+- [ ] Taste preferences from s02 (Taste Memory)
+- [ ] No other prerequisites — this skill is advisory-only and can be invoked at any phase
+
 ## Input Contract
 
 | Input | Source | Required |

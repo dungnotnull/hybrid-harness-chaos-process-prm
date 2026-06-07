@@ -26,6 +26,14 @@ Perform deep-dive system optimization across performance, data access, concurren
 
 ---
 
+## Prerequisites
+- [ ] Current phase context from s00 (Orchestrator)
+- [ ] PRD from s01 for alignment verification
+- [ ] Taste preferences from s02
+- [ ] Service definitions from s05 for architecture analysis
+- [ ] Security scan from s11 for vulnerability context
+- [ ] Performance baselines from s13 (recommended for comparison)
+
 ## Input Contract
 
 | Input | Source | Required |
@@ -720,7 +728,8 @@ on_partial:
 | Current | L2 | AI generates artifacts + analysis, human reviews and approves execution |
 | Target | L2 | Permanent L2 -- optimization audits require human judgment for false positive triage |
 
-### Harness AI Agent Coverage
+### Harness AI Agent
+**Agent**: Multi-agent
 
 | Agent | Modules | Rationale |
 |---|---|---|

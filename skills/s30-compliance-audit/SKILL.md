@@ -17,6 +17,14 @@ Automate the collection, organization, and presentation of compliance evidence a
 
 ---
 
+## Prerequisites
+- [ ] All security scan evidence from s11
+- [ ] Observability logs from s22
+- [ ] Resilience scores from s26
+- [ ] Release management records from s28
+- [ ] Disaster recovery plan from s29 (if available)
+- [ ] Applicable compliance framework requirements identified
+
 ## Input Contract
 
 | Input | Source | Required |

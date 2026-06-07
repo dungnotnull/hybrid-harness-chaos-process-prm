@@ -34,9 +34,9 @@ class TestInitProgress:
         project_root = str(tmp_path)
         data = init_progress(project_root, "test-project")
         assert data["project"] == "test-project"
-        assert data["total_phases"] == 36
+        assert data["total_phases"] == 37
         assert data["completed_phases"] == 0
-        assert len(data["phases"]) == 36
+        assert len(data["phases"]) == 37
 
     def test_init_all_phases_pending(self, tmp_path):
         project_root = str(tmp_path)
@@ -54,7 +54,7 @@ class TestLoadSaveProgress:
         loaded = load_progress(project_root)
         assert loaded is not None
         assert loaded["project"] == "test-project"
-        assert loaded["total_phases"] == 36
+        assert loaded["total_phases"] == 37
 
     def test_load_nonexistent(self, tmp_path):
         loaded = load_progress(str(tmp_path))
@@ -70,7 +70,7 @@ class TestDashboard:
         dashboard = render_dashboard(data)
         assert "HYBRID HARNESS" in dashboard
         assert "test-project" in dashboard
-        assert "0/36" in dashboard
+        assert "0/37" in dashboard
         assert "Foundation" in dashboard
 
     def test_render_dashboard_with_progress(self, tmp_path):
@@ -83,7 +83,7 @@ class TestDashboard:
         save_progress(project_root, data)
 
         dashboard = render_dashboard(data)
-        assert "1/36" in dashboard
+        assert "1/37" in dashboard
 
 
 class TestReport:
@@ -95,7 +95,7 @@ class TestReport:
         report = generate_report(data)
         assert "# Workflow Progress Report" in report
         assert "test-project" in report
-        assert "0/36" in report
+        assert "0/37" in report
 
     def test_report_with_completed_phases(self, tmp_path):
         project_root = str(tmp_path)
@@ -116,7 +116,7 @@ class TestPhaseValidation:
         phase_ids = [p["id"] for p in PHASES]
         assert "00-orchestrator" in phase_ids
         assert "35-devils-advocate" in phase_ids
-        assert len(PHASES) == 36
+        assert len(PHASES) == 37
 
     def test_valid_statuses(self):
         assert "pending" in VALID_STATUSES

@@ -20,6 +20,12 @@ behavior in all scenarios.
 
 ---
 
+## Prerequisites
+- [ ] Approved PRD from s01 (BA Requirements)
+- [ ] Architecture overview or ADRs from s01
+- [ ] User personas identified from PRD
+- [ ] Taste preferences loaded from .commandcode/taste/taste.md (recommended)
+
 ## Input Contract
 
 | Input | Source | Required |
@@ -131,6 +137,12 @@ Once the Review Report is signed off:
 - Role-playing different perspectives for review
 
 ---
+
+### Human Gates
+- Flow designs require human review before handoff to engineering (s04/s12)
+- Edge case completeness must be validated by QA perspective
+- Final sign-off on all 4 review lenses (Business, Developer, QA, SRE)
+- Any deviation from PRD scope requires explicit human approval
 
 ## Success Criteria
 - [ ] All personas from PRD have at least one mapped journey.

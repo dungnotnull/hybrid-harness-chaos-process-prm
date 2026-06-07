@@ -22,6 +22,12 @@ Enable evidence-grounded decision-making by systematically searching, reading, a
 
 ---
 
+## Prerequisites
+- [ ] Research question or topic clearly defined
+- [ ] Internet access for multi-source research
+- [ ] Access to academic databases (Google Scholar, arXiv) recommended
+- [ ] No specific skill outputs required — can be invoked at any phase
+
 ## Input Contract
 
 | Input | Source | Required |

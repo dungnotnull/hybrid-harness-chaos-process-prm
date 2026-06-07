@@ -1,4 +1,4 @@
-"""Skill Validator -- validates all SKILL.md files for structural correctness."""
+﻿"""Skill Validator -- validates all SKILL.md files for structural correctness."""
 import json
 import os
 import sys
@@ -200,7 +200,7 @@ def format_results(result: ValidationResult, use_json: bool = False, quiet: bool
             "warnings": result.warnings,
             "errors": [
                 {
-                    "skill": f"s{e.skill_number:02d}",
+                    "skill": (f"s{int(e.skill_number):02d}" + (f"-{int(round((e.skill_number % 1) * 10))}" if e.skill_number % 1 != 0 else "")),
                     "name": e.skill_name,
                     "severity": e.severity,
                     "category": e.category,
@@ -215,7 +215,7 @@ def format_results(result: ValidationResult, use_json: bool = False, quiet: bool
     # Group errors by skill
     by_skill = {}
     for err in result.errors:
-        key = f"s{err.skill_number:02d}"
+        key = (f"s{int(err.skill_number):02d}" + (f"-{int(round((err.skill_number % 1) * 10))}" if err.skill_number % 1 != 0 else ""))
         if key not in by_skill:
             by_skill[key] = []
         by_skill[key].append(err)

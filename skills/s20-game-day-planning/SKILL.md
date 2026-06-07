@@ -16,6 +16,14 @@ Orchestrate comprehensive game days that combine multiple chaos experiments with
 
 ---
 
+## Prerequisites
+- [ ] All chaos experiments from s14-s19 designed and validated
+- [ ] Team roles and availability confirmed
+- [ ] Observability dashboards from s22 active
+- [ ] Alert rules from s23 configured
+- [ ] Security scan from s11 completed (no CRITICAL findings)
+- [ ] Performance baselines from s13 established
+
 ## Input Contract
 
 | Input | Source | Required |

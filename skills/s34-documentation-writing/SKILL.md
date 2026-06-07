@@ -21,6 +21,12 @@ Generate clear, accurate, audience-appropriate documentation that makes a projec
 
 ---
 
+## Prerequisites
+- [ ] Project artifacts available (PRD, pipeline YAML, experiment results, etc.)
+- [ ] Target audience identified (engineers, non-technical users, SREs)
+- [ ] No specific skill outputs required — can be invoked at any phase
+- [ ] Access to project repository for documentation rendering
+
 ## Input Contract
 
 | Input | Source | Required |
@@ -251,14 +257,28 @@ Step 11: UPDATE README.md if the new doc should be linked
 
 ## AI Agent Integration
 
-| Aspect | Value |
-|---|---|
-| **Harness AI Agent** | DevOps Agent (Claude Opus 4.5) for technical docs; Knowledge Graph for cross-referencing |
-| **Autonomy Level** | L2 (Assisted) — AI drafts, human reviews for accuracy |
-| **Human Gates** | All documentation requires human review before merge |
-| **MCP** | Not applicable |
+### Autonomy Level
 
----
+| Aspect | Level | Description |
+|---|---|---|
+| Current | L1 | AI generates documentation drafts; human reviews and edits |
+| Target | L2 | AI produces publication-ready documentation with minimal human editing |
+
+### Harness AI Agent
+
+**Agent**: None (documentation by design)
+**Capabilities**:
+- Technical specification generation
+- API documentation generation
+- Mermaid diagram generation for user flows
+- README generation
+- Audience-aware writing style adaptation
+
+### Human Gates
+
+- Documentation accuracy review before publishing
+- Technical review for correctness
+- Style and tone approval
 
 ## Success Criteria
 

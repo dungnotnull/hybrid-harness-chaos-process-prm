@@ -18,6 +18,13 @@ Execute deep, comprehensive test case execution using CloakBrowser as the primar
 
 ---
 
+## Prerequisites
+- [ ] PRD and user flows from s01 (BA Requirements) or s01-1 (User Flow Writing)
+- [ ] Pipeline YAML from s04 (Pipeline Design)
+- [ ] Service deployed and accessible in target environment
+- [ ] CloakBrowser installed and configured
+- [ ] Test environment URLs available
+
 ## Input Contract
 
 | Input | Source | Required |

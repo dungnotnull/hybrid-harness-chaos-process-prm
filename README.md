@@ -1,9 +1,9 @@
-﻿# hybrid-harness-chaos-process-prm (v0.5.0)
+# hybrid-harness-chaos-process-prm (v0.5.0)
 
-**A 36-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, system optimization, documentation writing, and adversarial critique, purpose-built for the era of AI-assisted development.**
+**A 37-skill agentic workflow for platform engineering — spanning CI/CD, security, chaos engineering, observability, governance, compliance, deep research, system optimization, documentation writing, and adversarial critique, purpose-built for the era of AI-assisted development.**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-36-00b894.svg)](skills/)
+[![Skills](https://img.shields.io/badge/skills-37-00b894.svg)](skills/)
 [![AI Compatible](https://img.shields.io/badge/AI-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20GPT--4-8A2BE2.svg)]()
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg)](tools/)
 [![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green.svg)](.github/workflows/)
@@ -12,7 +12,7 @@
 
 ## What Is This?
 
-This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 36-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, deep research, system optimization, documentation, and adversarial critique.
+This repository is a **complete, production-grade skill library** designed to be consumed by AI coding agents (Claude Code, Codex, Gemini, GPT-4). It provides a standardized, 37-step Agile workflow that guides developers from project ideation through requirements gathering, CI/CD scaffolding, security scanning, chaos experimentation, observability integration, release governance, disaster recovery, compliance auditing, deep research, system optimization, documentation, and adversarial critique.
 
 **It's not a framework you install. It's a workflow you clone and point your AI agent at.**
 
@@ -22,7 +22,7 @@ Ideation → BA Analysis → CI/CD → Security Gate → Testing → Chaos → G
 → Deep Research (anytime) → System Optimization (anytime) → Documentation (anytime)
 → Devil's Advocate Critique (anytime)
 
-Also: AI Agent Integration across all 36 skills with Harness AI agents + MCP
+Also: AI Agent Integration across all 37 skills with Harness AI agents + MCP
 `
 
 ---
@@ -83,11 +83,6 @@ skills/sNN-<name>/
 | 01-1 | User Flow Writing | Multi-perspective user flow mapping with edge-case stress-testing |
 | 02 | Taste Memory | Developer preference learning — persists tastes across sessions and agents |
 | 03 | Progress Tracker | Multi-agent progress state machine — prevents duplicated and missed work |
-
-### Phase 1: Planning & Requirements
-| # | Skill | Purpose |
-|---|-------|---------|
-| 01 | BA Requirements | Deep project analysis with structured interview framework, gap detection |
 
 ### Phase 2: CI/CD Scaffolding (04-10)
 | # | Skill | Purpose |
@@ -263,7 +258,7 @@ progress-tracker handoff
 
 ## AI Agent Architecture
 
-All 36 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
+All 37 skills integrate with **Harness AI's specialized agent ecosystem** and the broader chaos engineering MCP ecosystem.
 
 ### SRE Autonomy Levels (Google SRE Framework)
 
@@ -347,7 +342,7 @@ Use structured templates for:
 
 ## Project Principles
 
-All 36 skills are designed around these core principles:
+All 37 skills are designed around these core principles:
 
 | Principle | Description |
 |---|---|
@@ -441,7 +436,7 @@ hybrid-harness-chaos-process-prm/
 │   ├── shared/                   <- Shared utilities (constants, models, parsers)
 │   └── chaos_mcp_server/         <- MCP server for LitmusChaos + Harness Chaos
 │
-└── skills/                      <- 36 skills in Agile workflow order
+└── skills/                      <- 37 skills in Agile workflow order
     ├── AI-AGENT-MAPPING.md      <- Harness AI agent mapping + autonomy model
     ├── SKILLS-CATALOG.md        <- Auto-generated skill catalog
     ├── s00-orchestrator/SKILL.md
